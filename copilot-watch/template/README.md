@@ -3,9 +3,10 @@
 `daily.html` はスマホ閲覧前提の固定テンプレート。ルーティンはデザインを書かず、データだけを差し込む。
 
 ## 使い方
-1. その日のデータを `sample-data.json` と同じ形の JSON にする。
-2. JSON 文字列内の `<` をすべて `<` に置換する（`</script>` 対策）。
-3. `daily.html` 内の `__REPORT_DATA__` をその JSON で 1 回だけ置換し、`copilot-watch/slides/YYYY-MM-DD.html` に保存する。
+```
+python3 copilot-watch/template/build.py data.json copilot-watch/slides/YYYY-MM-DD.html
+```
+JSON のエスケープとプレースホルダ置換はスクリプトが行う。
 
 ## データ形式
 | キー | 型 | 内容 |
