@@ -1,0 +1,73 @@
+{
+ "date": "2026-10-06",
+ "topics": [
+  [
+   "重要",
+   "Copilot Studio",
+   "GPT-6.1 Sol / Claude Sonnet 5.5 がCopilot Studio・Coworkで利用開始（UBB、2026-09-30〜）。Anthropic/OpenAI subprocessor有効化が必要",
+   "ロールアウト開始・未確認",
+   "https://mc.merill.net/message/MC1483844"
+  ],
+  [
+   "重要",
+   "M365 Copilot",
+   "GPT-6.1 Sol / Claude Sonnet 5.5 をWord・Excel・PowerPoint・Chatへ段階展開（USL）",
+   "ロールアウト予定・未確認",
+   "https://mc.merill.net/message/MC1483844"
+  ],
+  [
+   "",
+   "GitHub Copilot",
+   "Copilot code review: APIサポートと新既定effort level",
+   "参考",
+   "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+  ],
+  [
+   "",
+   "GitHub Copilot",
+   "一部モデルの非推奨",
+   "参考",
+   "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated"
+  ],
+  [
+   "",
+   "GitHub Copilot",
+   "コンピュータ利用でデスクトップアプリ操作",
+   "参考",
+   "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps"
+  ],
+  [
+   "",
+   "GitHub Copilot",
+   "VS Code 2026年9月リリース",
+   "参考",
+   "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases"
+  ],
+  [
+   "",
+   "GitHub Copilot",
+   "Dynamic workflows in Copilot CLI / Copilot app",
+   "参考",
+   "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"
+  ]
+ ],
+ "history": [
+  {
+   "date": "2026-10-05",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 5,
+    "Power Automate・AI Builder": 1,
+    "管理・ライセンス": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "counts": {
+    "M365 Copilot": 1,
+    "Copilot Studio": 1,
+    "GitHub Copilot": 5
+   }
+  }
+ ]
+}
