@@ -1,0 +1,353 @@
+<title>Copilot デイリー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: phone-first vertical deck. Sticky chip nav, one "page" per section, cards stacked full-width. */
+:root {
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --fg: #172231;
+  --muted: #5a6677;
+  --line: #d8dee7;
+  --accent: #2d55c8;
+  --accent-soft: #e3e9fa;
+  --ga: #1c7a4c;     --ga-soft: #dcf1e5;
+  --pre: #9a5b00;    --pre-soft: #fbecd2;
+  --dep: #b4322d;    --dep-soft: #f8dfdd;
+  --dev: #4f5b6b;    --dev-soft: #e5e9ef;
+  --unv: #6b4fb0;    --unv-soft: #ece6f8;
+  --font-display: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141c; --surface: #18202b; --fg: #e6ebf2; --muted: #9aa6b6; --line: #2a3442;
+    --accent: #8aa8ff; --accent-soft: #212d4a;
+    --ga: #6fd3a0; --ga-soft: #17352a; --pre: #f2bd63; --pre-soft: #3a2c12;
+    --dep: #ff8f88; --dep-soft: #44201f; --dev: #b2bccb; --dev-soft: #262f3b;
+    --unv: #c3adff; --unv-soft: #2c2445;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141c; --surface: #18202b; --fg: #e6ebf2; --muted: #9aa6b6; --line: #2a3442;
+  --accent: #8aa8ff; --accent-soft: #212d4a;
+  --ga: #6fd3a0; --ga-soft: #17352a; --pre: #f2bd63; --pre-soft: #3a2c12;
+  --dep: #ff8f88; --dep-soft: #44201f; --dev: #b2bccb; --dev-soft: #262f3b;
+  --unv: #c3adff; --unv-soft: #2c2445;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 560px; margin: 0 auto; padding-inline: 16px; padding-block: 0 48px; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+/* sticky nav */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  margin-inline: -16px; padding: 10px 16px;
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  flex: none; text-decoration: none; color: var(--fg);
+  font-size: 13px; font-weight: 700; padding: 8px 14px; min-height: 36px;
+  border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.nav a .n { font-family: var(--font-data); color: var(--muted); font-weight: 500; }
+
+/* pages */
+.page { padding-top: 28px; display: grid; gap: 14px; }
+.page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.page-head h2 { margin: 0; font-family: var(--font-display); font-size: 21px; font-weight: 700; text-wrap: balance; }
+.page-no { font-family: var(--font-data); font-size: 12px; color: var(--muted); flex: none; }
+.lede { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* cover */
+.cover { padding-top: 22px; display: grid; gap: 16px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.cover h1 { margin: 0; font-family: var(--font-display); font-size: 30px; line-height: 1.25; font-weight: 700; }
+.cover h1 .date { display: block; font-family: var(--font-data); font-size: 15px; font-weight: 500; color: var(--accent); margin-bottom: 4px; }
+.total { display: flex; align-items: baseline; gap: 10px; }
+.total b { font-family: var(--font-data); font-size: 52px; line-height: 1; font-weight: 500; font-variant-numeric: tabular-nums; }
+.total span { color: var(--muted); font-size: 14px; }
+.notice { background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+.notice:empty { display: none; }
+.statusbar { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* pills */
+.pill { display: inline-flex; align-items: center; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.s-ga  { color: var(--ga);  background: var(--ga-soft); }
+.s-pre { color: var(--pre); background: var(--pre-soft); }
+.s-dep { color: var(--dep); background: var(--dep-soft); }
+.s-dev { color: var(--dev); background: var(--dev-soft); }
+.s-unv { color: var(--unv); background: var(--unv-soft); border: 1px dashed var(--unv); }
+.prod  { color: var(--accent); background: var(--accent-soft); }
+
+/* bars */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; min-width: 0; }
+.bars { display: grid; gap: 12px; }
+.bar-row { display: grid; gap: 4px; }
+.bar-label { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; }
+.bar-label b { font-family: var(--font-data); font-weight: 500; font-variant-numeric: tabular-nums; }
+.bar-track { height: 10px; border-radius: 999px; background: var(--dev-soft); overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; background: var(--accent); }
+.spark-title { font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+.spark svg { width: 100%; height: auto; display: block; }
+.spark text { fill: var(--muted); font-family: var(--font-data); font-size: 10px; }
+
+/* topic cards */
+.topic { display: grid; gap: 8px; }
+.topic-meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.topic h3 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 700; text-wrap: pretty; }
+.topic p { margin: 0; font-size: 15px; }
+.topic .impact { color: var(--muted); font-size: 14px; }
+.src {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 44px; padding: 8px 12px; border-radius: 10px; background: var(--bg);
+  text-decoration: none; font-size: 13px; color: var(--accent); font-weight: 700;
+}
+.src span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.src .via { color: var(--muted); font-weight: 400; flex: none; }
+
+/* product list */
+details.group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+details.group summary {
+  list-style: none; cursor: pointer; padding: 14px 16px; min-height: 48px;
+  display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 700;
+}
+details.group summary::-webkit-details-marker { display: none; }
+details.group summary::after { content: "＋"; color: var(--muted); }
+details.group[open] summary::after { content: "－"; }
+details.group summary .cnt { font-family: var(--font-data); color: var(--muted); font-weight: 500; margin-left: auto; }
+.items { list-style: none; margin: 0; padding: 0 16px 8px; }
+.items li { padding: 12px 0; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+.items li a { font-size: 15px; text-decoration: none; color: var(--fg); font-weight: 700; }
+.items li .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+
+/* diffs */
+.diff h3 { margin: 0 0 8px; font-size: 15px; }
+.diff ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.diff li { font-size: 14px; padding: 8px 10px; border-radius: 8px; overflow-wrap: anywhere; }
+.diff li.add { background: var(--ga-soft); }
+.diff li.del { background: var(--dep-soft); text-decoration: line-through; text-decoration-color: var(--dep); }
+.diff li::before { font-family: var(--font-data); font-weight: 500; margin-right: 6px; }
+.diff li.add::before { content: "+"; color: var(--ga); }
+.diff li.del::before { content: "−"; color: var(--dep); }
+.empty { color: var(--muted); font-size: 14px; margin: 0; }
+
+/* fetch status */
+.fetch { list-style: none; margin: 0; padding: 0; }
+.fetch li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.fetch li:first-child { border-top: 0; }
+.fetch .ok { color: var(--ga); font-weight: 700; }
+.fetch .ng { color: var(--dep); font-weight: 700; }
+.fetch .site { overflow-wrap: anywhere; min-width: 0; }
+.fetch .note { display: block; color: var(--muted); font-size: 12px; }
+footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header class="cover" id="cover">
+    <div class="eyebrow">MICROSOFT COPILOT · DAILY WATCH</div>
+    <h1><span class="date" id="c-date"></span>Copilot デイリー</h1>
+    <div class="total"><b id="c-total">0</b><span>件の更新を検知</span></div>
+    <div class="statusbar" id="c-status"></div>
+    <p class="notice" id="c-notice"></p>
+  </header>
+
+  <nav class="nav" aria-label="セクション">
+    <a href="#p-chart"><span class="n">1</span>件数</a>
+    <a href="#p-top"><span class="n">2</span>重要</a>
+    <a href="#p-prod"><span class="n">3</span>製品別</a>
+    <a href="#p-diff"><span class="n">4</span>ページ差分</a>
+    <a href="#p-fetch"><span class="n">5</span>取得状況</a>
+  </nav>
+
+  <section class="page" id="p-chart">
+    <div class="page-head"><h2>製品別の件数</h2><span class="page-no">1 / 5</span></div>
+    <div class="card bars" id="bars"></div>
+    <div class="card spark"><p class="spark-title">過去14日の検知件数</p><div id="spark"></div></div>
+  </section>
+
+  <section class="page" id="p-top">
+    <div class="page-head"><h2>重要トピック</h2><span class="page-no">2 / 5</span></div>
+    <p class="lede">影響の大きい順。ステータスは出典の表記に基づきます。</p>
+    <div id="topics" style="display:grid;gap:12px"></div>
+  </section>
+
+  <section class="page" id="p-prod">
+    <div class="page-head"><h2>製品別一覧</h2><span class="page-no">3 / 5</span></div>
+    <div id="groups" style="display:grid;gap:10px"></div>
+  </section>
+
+  <section class="page" id="p-diff">
+    <div class="page-head"><h2>ページ差分</h2><span class="page-no">4 / 5</span></div>
+    <p class="lede">監視中の Microsoft Learn ページで、前日から変わった行です。</p>
+    <div id="diffs" style="display:grid;gap:12px"></div>
+  </section>
+
+  <section class="page" id="p-fetch">
+    <div class="page-head"><h2>取得状況</h2><span class="page-no">5 / 5</span></div>
+    <div class="card"><ul class="fetch" id="fetch"></ul></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script id="report-data" type="application/json">__REPORT_DATA__</script>
+<script>
+(function () {
+  var D;
+  try { D = JSON.parse(document.getElementById("report-data").textContent); }
+  catch (e) { D = { date: "", topics: [], counts: {}, history: [], diffs: [], fetch: [], notice: "レポートデータを読み込めませんでした。" }; }
+
+  var PRODUCTS = ["M365 Copilot", "Copilot Studio", "Power Automate・AI Builder", "管理・ライセンス", "GitHub Copilot"];
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function statusClass(s) {
+    s = (s || "").toLowerCase();
+    if (/未確認|unverified/.test(s)) return "s-unv";
+    if (/廃止|retire|deprecat/.test(s)) return "s-dep";
+    if (/preview|プレビュー/.test(s)) return "s-pre";
+    if (/予定|開発|planned|development/.test(s)) return "s-dev";
+    if (/ga|launched|一般提供|リリース済|rolling|ロールアウト/.test(s)) return "s-ga";
+    return "s-dev";
+  }
+  function host(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u || ""; } }
+  function srcLink(t) {
+    var a = el("a", "src"); a.href = t.url; a.target = "_blank"; a.rel = "noopener";
+    a.appendChild(el("span", null, host(t.url) + " ↗"));
+    if (t.source) a.appendChild(el("span", "via", t.source));
+    return a;
+  }
+
+  var topics = D.topics || [];
+  var counts = D.counts || {};
+  var total = 0; Object.keys(counts).forEach(function (k) { total += counts[k] || 0; });
+
+  // cover
+  document.getElementById("c-date").textContent = D.date || "";
+  document.getElementById("c-total").textContent = total;
+  document.getElementById("c-notice").textContent = D.notice || "";
+  document.title = "Copilot デイリー " + (D.date || "");
+  var tally = {};
+  topics.forEach(function (t) { var c = statusClass(t.status); tally[c] = (tally[c] || 0) + 1; });
+  [["s-ga", "GA・提供中"], ["s-pre", "Preview"], ["s-dev", "開発中・予定"], ["s-dep", "廃止予告"], ["s-unv", "未確認"]].forEach(function (p) {
+    if (tally[p[0]]) document.getElementById("c-status").appendChild(el("span", "pill " + p[0], p[1] + " " + tally[p[0]]));
+  });
+
+  // bars
+  var max = 0; PRODUCTS.forEach(function (p) { max = Math.max(max, counts[p] || 0); });
+  var bars = document.getElementById("bars");
+  PRODUCTS.forEach(function (p) {
+    var v = counts[p] || 0, row = el("div", "bar-row"), lab = el("div", "bar-label");
+    lab.appendChild(el("span", null, p)); lab.appendChild(el("b", null, String(v)));
+    var tr = el("div", "bar-track"), f = el("div", "bar-fill");
+    f.style.width = (max ? (v / max) * 100 : 0) + "%";
+    tr.appendChild(f); row.appendChild(lab); row.appendChild(tr); bars.appendChild(row);
+  });
+
+  // sparkline (last 14 entries)
+  var hist = (D.history || []).slice(-14);
+  var sp = document.getElementById("spark");
+  if (hist.length < 2) {
+    sp.appendChild(el("p", "empty", "推移は2日分以上たまると表示されます。"));
+  } else {
+    var W = 320, H = 110, L = 22, R = 10, T = 12, B = 22;
+    var vals = hist.map(function (h) { var s = 0; Object.keys(h.counts || {}).forEach(function (k) { s += h.counts[k] || 0; }); return s; });
+    var vmax = Math.max.apply(null, vals.concat([1]));
+    var x = function (i) { return L + (W - L - R) * i / (hist.length - 1); };
+    var y = function (v) { return T + (H - T - B) * (1 - v / vmax); };
+    var pts = vals.map(function (v, i) { return x(i).toFixed(1) + "," + y(v).toFixed(1); });
+    var ns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(ns, "svg"); svg.setAttribute("viewBox", "0 0 " + W + " " + H); svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "過去" + hist.length + "日の検知件数の推移");
+    function add(tag, attrs, txt) { var n = document.createElementNS(ns, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); if (txt != null) n.textContent = txt; svg.appendChild(n); return n; }
+    add("line", { x1: L, x2: W - R, y1: y(0), y2: y(0), stroke: "var(--line)", "stroke-width": 1 });
+    add("line", { x1: L, x2: W - R, y1: y(vmax), y2: y(vmax), stroke: "var(--line)", "stroke-width": 1, "stroke-dasharray": "3 3" });
+    add("text", { x: 0, y: y(vmax) + 3 }, String(vmax));
+    add("text", { x: 0, y: y(0) + 3 }, "0");
+    add("polygon", { points: x(0) + "," + y(0) + " " + pts.join(" ") + " " + x(hist.length - 1) + "," + y(0), fill: "var(--accent-soft)", stroke: "none" });
+    add("polyline", { points: pts.join(" "), fill: "none", stroke: "var(--accent)", "stroke-width": 2, "stroke-linejoin": "round" });
+    var li = hist.length - 1;
+    add("circle", { cx: x(li), cy: y(vals[li]), r: 4, fill: "var(--accent)" });
+    add("text", { x: x(0), y: H - 6 }, (hist[0].date || "").slice(5));
+    add("text", { x: x(li), y: H - 6, "text-anchor": "end" }, (hist[li].date || "").slice(5));
+    sp.appendChild(svg);
+  }
+
+  // important topics
+  var tw = document.getElementById("topics");
+  var imp = topics.filter(function (t) { return t.important; });
+  if (!imp.length) tw.appendChild(el("p", "empty", "今日は重要トピックはありません。"));
+  imp.forEach(function (t) {
+    var c = el("article", "card topic"), m = el("div", "topic-meta");
+    m.appendChild(el("span", "pill prod", t.product));
+    m.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
+    c.appendChild(m);
+    c.appendChild(el("h3", null, t.title));
+    if (t.what) c.appendChild(el("p", null, t.what));
+    if (t.impact) c.appendChild(el("p", "impact", "影響: " + t.impact));
+    if (t.url) c.appendChild(srcLink(t));
+    tw.appendChild(c);
+  });
+
+  // product groups
+  var gw = document.getElementById("groups");
+  PRODUCTS.forEach(function (p, idx) {
+    var list = topics.filter(function (t) { return t.product === p; });
+    var d = el("details", "group"); if (list.length && idx < 2) d.open = true;
+    var s = el("summary"); s.appendChild(el("span", null, p)); s.appendChild(el("span", "cnt", list.length + "件"));
+    d.appendChild(s);
+    var ul = el("ul", "items");
+    if (!list.length) { var e = el("li"); e.appendChild(el("span", "empty", "該当なし")); ul.appendChild(e); }
+    list.forEach(function (t) {
+      var li = el("li"), a = el("a", null, t.title);
+      if (t.url) { a.href = t.url; a.target = "_blank"; a.rel = "noopener"; }
+      var r = el("div", "row");
+      r.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
+      if (t.source) r.appendChild(el("span", null, t.source));
+      if (t.updated) r.appendChild(el("span", null, t.updated));
+      li.appendChild(a); li.appendChild(r); ul.appendChild(li);
+    });
+    d.appendChild(ul); gw.appendChild(d);
+  });
+
+  // diffs
+  var dw = document.getElementById("diffs");
+  var diffs = D.diffs || [];
+  if (!diffs.length) dw.appendChild(el("p", "card empty", D.baseline ? "初回ベースラインのため差分はありません。次回から表示されます。" : "監視ページに変更はありませんでした。"));
+  diffs.forEach(function (d) {
+    var c = el("div", "card diff"), h = el("h3");
+    var a = el("a", null, d.page); if (d.url) { a.href = d.url; a.target = "_blank"; a.rel = "noopener"; }
+    h.appendChild(a); c.appendChild(h);
+    var ul = el("ul");
+    (d.added || []).forEach(function (x) { ul.appendChild(el("li", "add", x)); });
+    (d.removed || []).forEach(function (x) { ul.appendChild(el("li", "del", x)); });
+    c.appendChild(ul); dw.appendChild(c);
+  });
+
+  // fetch status
+  var fw = document.getElementById("fetch");
+  (D.fetch || []).forEach(function (f) {
+    var li = el("li");
+    li.appendChild(el("span", f.ok ? "ok" : "ng", f.ok ? "✓" : "✕"));
+    var s = el("span", "site", f.site); if (f.note) s.appendChild(el("span", "note", f.note));
+    li.appendChild(s); fw.appendChild(li);
+  });
+
+  document.getElementById("foot").textContent = "生成: " + (D.generatedAt || D.date || "") + " · 出典は各リンク先（Microsoft公式）";
+})();
+</script>
