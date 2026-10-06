@@ -1,12 +1,35 @@
 Prompt model availability by region and updates - Microsoft Copilot Studio | Microsoft Learn
+Table of contents
+Exit editor mode
+Ask Learn
+Ask Learn
+Reading mode
+Table of contents
+Read in English
+Add
+Add to Plans
+Edit
+Copy Markdown
+Print
 Note
-Access to this page requires authorization. You can try signing in or changing directories.
-Access to this page requires authorization. You can try changing directories.
+Access to this page requires authorization. You can try
+signing in
+or
+changing directories
+.
+Access to this page requires authorization. You can try
+changing directories
+.
 Prompt model availability by region and updates
-##
+Feedback
+Summarize this article for me
 Note
-This article describes features used in agents or agent flows powered by the standard harness.
-This article provides information about the availability of generative AI models across different regions and model update schedules for model use in prompts. Learn about model selection, capabilities, and settings in Change the model version and settings.
+This article describes features used in agents or agent flows powered by the
+standard harness
+.
+This article provides information about the availability of generative AI models across different regions and model update schedules for model use in prompts. Learn about model selection, capabilities, and settings in
+Change the model version and settings
+.
 Model availability for prompts by region
 The following sections describe the public and US Government availability of models by region.
 Public availability
@@ -201,7 +224,9 @@ Grok 4.1 Fast (Non-reasoning)
 -
 Experimental
 Note
-Models marked as cross-geo might process data outside of your region](#admin-controls-for-ai-model-selection).
+Models marked as
+cross-geo
+might process data outside of your region](#admin-controls-for-ai-model-selection).
 US Government availability
 Feature
 Government Community Cloud (GCC)
@@ -235,25 +260,16 @@ GPT-4.1
 o1
 July 2025
 o3
+Feedback
 Was this page helpful?
+Yes
+No
+No
 Need help with this topic?
 Want to try using Ask Learn to clarify or guide you through this topic?
-##
--
-##
-Was this page helpful?
-Need help with this topic?
-Want to try using Ask Learn to clarify or guide you through this topic?
--
--
--
--
--
--
--
--
--
--
--
--
--
+Ask Learn
+Ask Learn
+Suggest a fix?
+Additional resources
+Last updated on
+2026-08-03

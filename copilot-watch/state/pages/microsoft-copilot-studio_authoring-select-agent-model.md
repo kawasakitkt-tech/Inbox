@@ -1,21 +1,54 @@
 Select a primary AI model for your agent - Microsoft Copilot Studio | Microsoft Learn
+Table of contents
+Exit editor mode
+Ask Learn
+Ask Learn
+Reading mode
+Table of contents
+Read in English
+Add
+Add to Plans
+Edit
+Copy Markdown
+Print
 Note
-Access to this page requires authorization. You can try signing in or changing directories.
-Access to this page requires authorization. You can try changing directories.
+Access to this page requires authorization. You can try
+signing in
+or
+changing directories
+.
+Access to this page requires authorization. You can try
+changing directories
+.
 Select a primary AI model for your agent
-##
+Feedback
+Summarize this article for me
 Note
-This article describes features used in agents or agent flows powered by the standard harness.
+This article describes features used in agents or agent flows powered by the
+standard harness
+.
 AI capabilities evolve rapidly, and each generative model brings distinct strengths, whether it's faster responses, higher-quality outputs, or improved cost efficiency. By using Copilot Studio, you can choose the best model for your agent's orchestration by using a simple dropdown menu.
 Want to try out cutting-edge models before they're production-ready? Access the latest experimental models to evaluate them early. However, they might have limited testing, availability, and functionality.
-This article describes how to select an AI model for your agent's generative orchestration. Separate settings exist for changing models for deep reasoning (preview), generative responses (preview), and the prompt builder.
+This article describes how to select an AI model for your agent's generative orchestration. Separate settings exist for changing models for
+deep reasoning (preview)
+,
+generative responses (preview)
+, and the
+prompt builder
+.
 Important
-Experimental models are available for exploration and testing but aren't recommended for production use. Review Limitations of experimental and preview models before choosing an experimental or preview model for your agent.
-Data processed within an experimental model might be processed and stored outside of your organization's geographical boundaries.
+Experimental models are available for exploration and testing but aren't recommended for production use. Review
+Limitations of experimental and preview models
+before choosing an experimental or preview model for your agent.
+Data processed within an experimental model might be processed and stored
+outside of your organization's geographical boundaries
+.
 This article contains Copilot Studio documentation on model selection, which includes experimental model previews, and is subject to change.
 Model availability by region
 Copilot Studio offers different types of models. These model types are based on their intended use and availability.
-You can see each model's tags in the list of models in Copilot Studio.
+You can see each model's tags in the
+list of models
+in Copilot Studio.
 The following tables show the availability status of selected models across regions and special scopes.
 Standard harness availability
 Model
@@ -259,9 +292,21 @@ Experimental (cross-geo)
 Experimental (cross-geo)
 Experimental (cross-geo)
 Note
-Models marked as cross-geo might process data outside of your region.
+Models marked as
+cross-geo
+might
+process data outside of your region
+.
 Important
-Microsoft's safety and responsible AI evaluations found Grok-4.1 Fast (Non-Reasoning) to be less aligned than other models evaluated resulting in (i) higher risks that the model will produce potentially harmful content and (ii) lower scores on safety and jailbreak benchmarks. Grok-4.1 Fast (Non-Reasoning) may be capable of producing explicit content, and may do so with a higher propensity than other models. Customers must comply with both the Microsoft Enterprise AI Services Code of Conduct and xAI's Enterprise Terms of Service, including its Acceptable Use Policy. Additionally, there may be categories of harm this model can produce that are not covered by Microsoft's content safety systems. Accordingly, as with all Experimental models, Grok-4.1 Fast (Non-Reasoning) is not recommended for production use and customers should review Limitations of experimental and preview models and conduct their own evaluations before choosing Grok-4.1 Fast (Non-Reasoning).
+Microsoft's safety and responsible AI evaluations found Grok-4.1 Fast (Non-Reasoning) to be less aligned than other models evaluated resulting in (i) higher risks that the model will produce potentially harmful content and (ii) lower scores on safety and jailbreak benchmarks. Grok-4.1 Fast (Non-Reasoning) may be capable of producing explicit content, and may do so with a higher propensity than other models. Customers must comply with both the
+Microsoft Enterprise AI Services Code of Conduct
+and
+xAI's Enterprise Terms of Service
+, including its
+Acceptable Use Policy
+. Additionally, there may be categories of harm this model can produce that are not covered by Microsoft's content safety systems. Accordingly, as with all Experimental models, Grok-4.1 Fast (Non-Reasoning) is not recommended for production use and customers should review
+Limitations of experimental and preview models
+and conduct their own evaluations before choosing Grok-4.1 Fast (Non-Reasoning).
 US Government availability
 Model
 Government Community Cloud (GCC)
@@ -272,7 +317,11 @@ Default
 Default
 Default
 Model use categories
-Models are optimized for different purposes. Your agent can perform better when you choose a model with the strengths that fit your agent's purpose. For example, an agent that makes complex decisions can benefit from a deep model, while an agent expected to talk about a wide range of topics could use a general model.
+Models are optimized for different purposes. Your agent can perform better when you choose a model with the strengths that fit your agent's purpose. For example, an agent that makes complex decisions can benefit from a
+deep
+model, while an agent expected to talk about a wide range of topics could use a
+general
+model.
 The following table describes the model use tags, their strengths, and considerations to keep in mind if you use the model.
 Tag
 Description
@@ -299,72 +348,92 @@ Lowest
 Lowest
 Shallow-to-moderate
 Model release types
-Each model listed in Copilot Studio has a tag that identifies its release type. You can try new, cutting-edge experimental and preview models, or choose a reliable, thoroughly tested generally available model.
-Experimental: Used for experimentation, and not intended for production use. Subject to preview terms, and can have limitations on availability and quality. See Limitations of experimental and preview models.
-Preview: Might eventually become a generally available model, but currently not intended for production use. Subject to preview terms, and can have limitations on availability and quality. See Limitations of experimental and preview models.
-Generally available (GA): Models without a release tag are generally available. You can use this model for scaled and production use. In most cases, generally available models have no limitations on availability and quality, but some might still have some limitations, like regional availability.
-Default: The default model for all agents, and usually the best performing generally available model. The default model is periodically upgraded as new, more capable models become generally available. Agents also use the default model as a fallback if a selected model is turned off or unavailable.
-Retired: When a new model becomes the default model, the old default model is retired. You can still use the retired model for up to one month after retirement. Learn more in Continue using a retired AI model.
-Cross-geo: Might require data processing and storage outside of your organization's geographical boundaries. Your admin can turn data movement across regions on or off.
-Early access environment: An early release cycle environment. These environments receive new updates and features first. Learn more in Early release cycle environments.
+Each model listed in Copilot Studio has a tag that identifies its release type. You can try new, cutting-edge
+experimental
+and
+preview
+models, or choose a reliable, thoroughly tested
+generally available
+model.
+Experimental
+: Used for experimentation, and not intended for production use. Subject to preview terms, and can have limitations on availability and quality. See
+Limitations of experimental and preview models
+.
+Preview
+: Might eventually become a generally available model, but currently not intended for production use. Subject to preview terms, and can have limitations on availability and quality. See
+Limitations of experimental and preview models
+.
+Generally available (GA)
+: Models without a release tag are generally available. You can use this model for scaled and production use. In most cases, generally available models have no limitations on availability and quality, but some might still have some limitations, like regional availability.
+Default
+: The default model for all agents, and usually the best performing generally available model. The default model is periodically upgraded as new, more capable models become generally available. Agents also use the default model as a fallback if a selected model is turned off or unavailable.
+Retired
+: When a new model becomes the default model, the old default model is retired. You can still use the retired model for up to one month after retirement. Learn more in
+Continue using a retired AI model
+.
+Cross-geo
+: Might require data processing and storage outside of your organization's geographical boundaries. Your admin can
+turn data movement across regions
+on or off.
+Early access environment
+: An early release cycle environment. These environments receive new updates and features first. Learn more in
+Early release cycle environments
+.
 External models
-You can also add external AI models from Anthropic, xAI, or Mistral to your agent. Learn more in Choose an external model as the primary AI model.
+You can also add external AI models from Anthropic, xAI, or Mistral to your agent. Learn more in
+Choose an external model as the primary AI model
+.
 Limitations of experimental and preview models
 You can explore and test experimental and preview models, but don't use them for production:
--
 They might show variability in performance, response quality, latency, or message consumption, and might time out or be unavailable.
--
-If you publish an agent with an experimental or preview model, and users use the agent, that use is billed at the established rates.
+If you publish an agent with an experimental or preview model, and users use the agent, that use is billed at the
+established rates
+.
 Feel free to experiment with these models. However, be cautious about deploying them in production environments.
-Experimental and preview models are subject to preview terms. Microsoft makes these models available before an official release so that you can get early access and provide feedback. If you're building a production-ready agent, see Copilot Studio overview.
+Experimental and preview models are subject to
+preview terms
+. Microsoft makes these models available before an official release so that you can get early access and
+provide feedback
+. If you're building a production-ready agent, see
+Copilot Studio overview
+.
 Change your agent's AI model
 Your agent starts with a default model optimized for most scenarios. To change your agent's model:
--
-Go to your agent's Overview page.
--
-In the Model section, select your agent's primary model. You can switch between experimental and production models at any time.
+Go to your agent's
+Overview
+page.
+In the
+Model
+section, select your agent's primary model. You can switch between experimental and production models at any time.
 Admin controls for AI model selection
 Administrators can allow or block makers from adding preview and experimental AI models to agents by using the following settings:
--
-Administrators can choose to allow or block preview and experimental models in an environment. To use these models, the Preview and experimental AI models setting must be turned on for your environment.
--
-Data processed within a preview or experimental model might be processed and stored outside of your organization's geographical boundaries. To make experimental models available, your environment must have the Move data across regions setting turned on. The tenant administrator manages this environment-level setting in the Power Platform admin center.
+Administrators can choose to allow or block preview and experimental models in an environment. To use these models, the
+Preview and experimental AI models
+setting must be turned on for your environment.
+Data processed within a preview or experimental model might be processed and stored outside of your organization's geographical boundaries. To make experimental models available, your environment must have the
+Move data across regions
+setting turned on. The tenant administrator manages this environment-level setting in the Power Platform admin center.
 Admin controls and requirements for external models
 Admins control whether makers can add external models to agents. To grant access to external models, admins must complete the following actions:
--
-Turn on external models in Power Platform admin center for the environment or the environment group.
--
+Turn on external models
+in Power Platform admin center for the environment or the environment group.
 Allow access to each external model provider in the Microsoft 365 admin center. Learn more in the Microsoft 365 admin center documentation:
--
 Connect to Anthropic LLM
--
 Connect to Mistral
--
 Connect to xAI
 Preview models and external models are two different sets that can overlap but aren't the same, and their settings are separate. For example:
--
 Admins can block external models but allow preview or experimental models. In this case, makers can't use external models but can use preview, experimental, and generally available internal models.
--
 Admins can block preview or experimental models but allow external models. In this case, makers can't use any preview or experimental models, but can use any generally available external and internal models.
+Feedback
 Was this page helpful?
+Yes
+No
+No
 Need help with this topic?
 Want to try using Ask Learn to clarify or guide you through this topic?
-##
--
-##
-Was this page helpful?
-Need help with this topic?
-Want to try using Ask Learn to clarify or guide you through this topic?
--
--
--
--
--
--
--
--
--
--
--
--
--
+Ask Learn
+Ask Learn
+Suggest a fix?
+Additional resources
+Last updated on
+2026-09-18

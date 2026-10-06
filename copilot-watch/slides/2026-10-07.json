@@ -1,0 +1,326 @@
+{
+ "date": "2026-10-07",
+ "generatedAt": "2026-10-07 08:10 JST",
+ "baseline": false,
+ "notice": "Copilot Studio what's newに2026年8・9月欄が追加。GPT-6.1 Sol / Claude Sonnet 5.5（MC1483844）は既報。",
+ "counts": {
+  "Copilot Studio": 12,
+  "M365 Copilot": 5,
+  "管理・ライセンス": 3,
+  "Power Automate・AI Builder": 0,
+  "GitHub Copilot": 0
+ },
+ "history": [
+  {
+   "date": "2026-10-05",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 5,
+    "Power Automate・AI Builder": 1,
+    "管理・ライセンス": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "counts": {
+    "M365 Copilot": 1,
+    "Copilot Studio": 1,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "counts": {
+    "Copilot Studio": 12,
+    "M365 Copilot": 5,
+    "管理・ライセンス": 3
+   }
+  }
+ ],
+ "topics": [
+  {
+   "product": "Copilot Studio",
+   "important": true,
+   "status": "GA/Preview混在（出典表記どおり）",
+   "title": "GitHub Copilot harness搭載エージェントでモデルをドロップダウン選択可能に（実験モデルの先行評価も可）",
+   "what": "Copilot Studio what's new 2026年9月欄に追加。",
+   "impact": "GitHub Copilot harness搭載エージェントの作成者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": true,
+   "status": "—",
+   "title": "GitHub Copilot harness搭載のエージェント/ワークフロー/アプリに使用量課金（Copilot Credits）、従量課金または1年前払いで管理",
+   "what": "what's new 2026年8月欄に追加。Power Platform管理センターでCopilot Creditsを購入・管理。",
+   "impact": "課金・ライセンス管理者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": true,
+   "status": "Preview",
+   "title": "ワークフローに extract ノード（請求書・契約書等から値/表を抽出）と Copilot ノード（Copilot Chat / Cowork実行、Researcher・Analyst等を呼出）を追加",
+   "what": "what's new 2026年9月欄に追加。",
+   "impact": "ワークフロー作成者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": true,
+   "status": "GA",
+   "title": "コンテンツ安全性テスト方式（有害コンテンツ評価、重大度しきい値設定可）",
+   "what": "what's new 2026年9月欄に「(General availability)」付きで追加。",
+   "impact": "エージェント評価",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "—",
+   "title": "会話への添付ファイルがExcel・PowerPoint・Wordに対応拡大",
+   "what": "2026年9月欄。",
+   "impact": "エンドユーザー・作成者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "Preview（一部）",
+   "title": "Dataverseテーブルをナレッジソースに追加（Multiline Text/File列の非構造化推論はpreview）",
+   "what": "2026年9月欄。",
+   "impact": "ナレッジ設定",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "Preview",
+   "title": "Fabric IQ接続（Microsoft Fabricの意味モデルに基づく回答）",
+   "what": "2026年8月欄。",
+   "impact": "データ活用",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "—",
+   "title": "Microsoft Agent 365へのオンボードでエージェントを集中ガバナンス（Entra ID表現、条件付きアクセス、可観測性）",
+   "what": "2026年8月欄。",
+   "impact": "管理者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "—",
+   "title": "エージェント応答内の画像レンダリング・埋め込みURLを環境/環境グループ単位で制御",
+   "what": "2026年8月欄。Power Platform管理センターで設定。",
+   "impact": "管理者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "—",
+   "title": "Azure SQLテーブルをナレッジソースに追加",
+   "what": "2026年8月欄。",
+   "impact": "ナレッジ設定",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "Preview",
+   "title": "Work IQ をエージェントに追加（ファイル・メール・会議・チャット等の共有コンテキストでグラウンディング）",
+   "what": "2026年8月欄。",
+   "impact": "作成者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": false,
+   "status": "—",
+   "title": "what's new冒頭の案内が「Released versions」からRoadmap誘導へ変更",
+   "what": "「過去数週間のリリースはReleased versionsを参照」→ Roadmap（製品・領域でフィルタ可）の案内。",
+   "impact": "情報の探し方",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": true,
+   "status": "—",
+   "title": "Copilot SearchにChatを統合（検索結果から文脈を引き継いでフォローアップ質問・生成）[Windows, Web]",
+   "what": "M365 Copilotリリースノート 2026-10-06（9/22〜10/06）に追加。Roadmap ID 512429。",
+   "impact": "全ユーザー",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "—",
+   "title": "Regenerate: 「Try Again」「Switch Model」で別回答/別モデル回答を取得 [Web]",
+   "what": "Copilot Chatの「その他のオプション」から。",
+   "impact": "Copilot Chatユーザー",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "—",
+   "title": "PowerPointのCopilotでカスタムスキル作成 [Windows]（ユーザー定義スキルは別項目でWebにも記載）",
+   "what": "リリースノート10/06。",
+   "impact": "PowerPointユーザー",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "—",
+   "title": "PowerPointのCopilotでSharePointライブラリ/OneDriveフォルダ内ファイルを参照して作成 [Mac]",
+   "what": "リリースノート10/06。",
+   "impact": "PowerPoint(Mac)ユーザー",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "GA予定: November CY2026（In development）",
+   "title": "Teams: Intelligent call delegation（着信対応・文脈収集、Bookingsで折返し予約）",
+   "what": "ロードマップ新規。Desktop/Mac、Targeted Release。",
+   "impact": "Teamsユーザー",
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=565216",
+   "source": "ロードマップ",
+   "updated": "10/05"
+  },
+  {
+   "product": "管理・ライセンス",
+   "important": false,
+   "status": "—",
+   "title": "Copilotコネクターのクエリ文字列・ユーザーID対応ルールを接続作成後に管理センターで編集可能に [Windows, Web]",
+   "what": "サポート依頼なしで編集可（M365管理センター > 設定 > 検索とインテリジェンス > データソース）。",
+   "impact": "コネクター管理者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "管理・ライセンス",
+   "important": false,
+   "status": "—",
+   "title": "SharePoint管理センター: 「Everyone」「Everyone except external users」の項目単位権限詳細レポート [Web]",
+   "what": "SharePoint Advanced Management。Roadmap ID 561038。",
+   "impact": "SharePoint管理者",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  },
+  {
+   "product": "管理・ライセンス",
+   "important": false,
+   "status": "—",
+   "title": "Copilot Analytics: Cowork導入・効果の詳細（Copilotダッシュボード/Consumptionダッシュボード、エクスポート可）[Web]",
+   "what": "新しいConsumptionクエリ（クレジット使用量）等で分析可。",
+   "impact": "Copilot管理者・アナリスト",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "source": "ページ差分",
+   "updated": "10/07"
+  }
+ ],
+ "diffs": [
+  {
+   "page": "Copilot Studio what's new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "added": [
+    "2026年9月欄（extractノード/Copilotノード/GitHub Copilot harnessのモデル選択/コンテンツ安全性テストGA/添付ファイル拡大/Dataverseナレッジ）",
+    "2026年8月欄（使用量課金/Copilot Credits、Fabric IQ、Agent 365、画像・URL制御、Azure SQL、Work IQ）",
+    "冒頭にRoadmap案内"
+   ],
+   "removed": [
+    "冒頭の「Released versions of Microsoft Copilot Studio」案内"
+   ]
+  },
+  {
+   "page": "M365 Copilot release notes",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "added": [
+    "2026-10-06更新の7項目（Search+Chat統合、Regenerate、PowerPointカスタムスキル、Mac参照ファイル、コネクター編集、SharePointレポート、Cowork分析）"
+   ],
+   "removed": []
+  }
+ ],
+ "fetch": [
+  {
+   "site": "learn.microsoft.com 監視ページ7件",
+   "ok": true,
+   "note": "差分は上記2ページのみ。prompt-model-availability/settings/authoring-select-agent-model/extensibility whats-new/power-automate release-notesは意味のある変更なし"
+  },
+  {
+   "site": "learn.microsoft.com/ai-builder/whats-new",
+   "ok": false,
+   "note": "404：存在しないためスキップ"
+  },
+  {
+   "site": "M365ロードマップRSS",
+   "ok": true,
+   "note": "過去48hのCopilot関連で新規はTeams call delegationのみ"
+  },
+  {
+   "site": "GitHub Copilot changelog",
+   "ok": true,
+   "note": "10/02以降の新規なし（既報のみ）"
+  },
+  {
+   "site": "Copilot Studio Blog / Power Platform Blog / Tech Community",
+   "ok": false,
+   "note": "取得はできたが記事一覧を静的HTMLから抽出できず"
+  },
+  {
+   "site": "power-platform/release-plan",
+   "ok": true,
+   "note": "変更なし"
+  },
+  {
+   "site": "github.com MicrosoftDocs/m365copilot-docs",
+   "ok": false,
+   "note": "403：ブロック"
+  },
+  {
+   "site": "mc.merill.net",
+   "ok": false,
+   "note": "WebSearchスニペットのみ（MC1483844は既報）"
+  }
+ ]
+}
