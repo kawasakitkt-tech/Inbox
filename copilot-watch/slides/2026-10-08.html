@@ -109,11 +109,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .spark text { fill: var(--muted); font-family: var(--font-data); font-size: 10px; }
 
 /* topic cards */
-.topic { display: grid; gap: 8px; }
+.topic { display: grid; gap: 10px; }
 .topic-meta { display: flex; flex-wrap: wrap; gap: 6px; }
 .topic h3 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 700; text-wrap: pretty; }
 .topic p { margin: 0; font-size: 15px; }
-.topic .impact { color: var(--muted); font-size: 14px; }
+.lead { color: var(--fg); }
+.points { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 15px; }
+.points li::marker { color: var(--accent); }
+.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; font-size: 13px;
+  border-top: 1px solid var(--line); padding-top: 10px; }
+.facts dt { color: var(--muted); font-weight: 700; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.why { background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; font-size: 14px; display: grid; gap: 2px; }
+.why b { font-size: 12px; letter-spacing: .04em; color: var(--accent); }
+.items .lead { margin: 0; font-size: 14px; }
+.items .more summary { cursor: pointer; font-size: 13px; color: var(--accent); font-weight: 700; padding: 6px 0; min-height: 32px; list-style: none; }
+.items .more summary::-webkit-details-marker { display: none; }
+.items .more[open] summary { color: var(--muted); }
+.items .more .points { font-size: 14px; padding-bottom: 4px; }
 .src {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
   min-height: 44px; padding: 8px 12px; border-radius: 10px; background: var(--bg);
@@ -207,7 +220,7 @@ footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
   <footer id="foot"></footer>
 </div>
 
-<script id="report-data" type="application/json">{"date": "2026-10-08", "generatedAt": "2026-10-08 17:25 JST", "baseline": false, "notice": "同日再実行。監視ページ7件に意味のある差分なし、ロードマップ新着なし（既報のみ）。", "counts": {"Power Automate・AI Builder": 2, "GitHub Copilot": 5}, "history": [{"date": "2026-10-05", "counts": {"M365 Copilot": 7, "Copilot Studio": 5, "Power Automate・AI Builder": 1, "管理・ライセンス": 2}}, {"date": "2026-10-06", "counts": {"M365 Copilot": 1, "Copilot Studio": 1, "GitHub Copilot": 5}}, {"date": "2026-10-07", "counts": {"Copilot Studio": 12, "M365 Copilot": 5, "管理・ライセンス": 3}}, {"date": "2026-10-08", "counts": {"Power Automate・AI Builder": 2, "GitHub Copilot": 5}}], "topics": [{"product": "Power Automate・AI Builder", "important": true, "status": "開発中", "title": "Power Automate for desktop: Flowchart modeでデスクトップフローを視覚的に作成・編集", "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573292", "source": "ロードマップ", "updated": "10/06", "what": "フローチャート表現でフローを作成。Sequence modeとの切替が可能。Preview: October CY2026 / GA: November CY2026。", "impact": "デスクトップフロー作成者"}, {"product": "Power Automate・AI Builder", "important": true, "status": "Launched", "title": "デスクトップフローをScheduled Triggersで直接スケジュール実行", "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573278", "source": "ロードマップ", "updated": "10/06", "what": "中間のスケジュール済みクラウドフロー不要。日次/週次/月次/時間/カスタム繰り返し、実行マシン/マシングループ指定。Preview: September CY2026 / GA: October CY2026。", "impact": "デスクトップフロー作成者"}, {"product": "GitHub Copilot", "important": false, "status": "—", "title": "Claude Haiku 5.5 が GitHub Copilot で利用可能", "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot", "source": "GitHub changelog", "updated": "10/07", "impact": "GitHub Copilot利用者"}, {"product": "GitHub Copilot", "important": false, "status": "GA", "title": "GitHub Copilot のローカルサンドボックスが一般提供", "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available", "source": "GitHub changelog", "updated": "10/07", "impact": "GitHub Copilot利用者"}, {"product": "GitHub Copilot", "important": false, "status": "—", "title": "漏えいシークレット検出向けの専用モデル", "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection", "source": "GitHub changelog", "updated": "10/07", "impact": "GitHub Copilot / Secret scanning"}, {"product": "GitHub Copilot", "important": false, "status": "—", "title": "Copilot CLIでローカルモデルを検出可能に", "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli", "source": "GitHub changelog", "updated": "10/07", "impact": "Copilot CLI利用者"}, {"product": "GitHub Copilot", "important": false, "status": "—", "title": "IDE更新でCopilot使用状況メトリクスのエージェント活動を復旧", "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics", "source": "GitHub changelog", "updated": "10/06", "impact": "管理者（メトリクス）"}], "diffs": [], "fetch": [{"site": "learn.microsoft.com 監視ページ7件", "ok": true, "note": "意味のある差分なし（体裁のみ）。M365 release notesの最新は10/06のまま"}, {"site": "learn.microsoft.com/ai-builder/whats-new", "ok": false, "note": "404（存在せずスキップ）"}, {"site": "github.com/MicrosoftDocs/m365copilot-docs", "ok": false, "note": "403 ブロック"}, {"site": "techcommunity.microsoft.com", "ok": false, "note": "記事一覧を取得できず"}, {"site": "WebSearch", "ok": true, "note": "新規の一次情報なし（MC1483844は既報）"}, {"site": "microsoft.com ブログRSS（Copilot Studio / M365 / Power Platform）", "ok": false, "note": "HTTP 403（再実行時）。ロードマップJSONは取得可"}]}</script>
+<script id="report-data" type="application/json">{"date": "2026-10-08", "generatedAt": "2026-10-08 17:40 JST", "baseline": false, "notice": "同日再実行。監視ページに意味のある差分なし、ロードマップ・ブログに新着なし。既報7件を一次情報の本文を読み直して書き直し。", "counts": {"Power Automate・AI Builder": 2, "GitHub Copilot": 5}, "history": [{"date": "2026-10-05", "counts": {"M365 Copilot": 7, "Copilot Studio": 5, "Power Automate・AI Builder": 1, "管理・ライセンス": 2}}, {"date": "2026-10-06", "counts": {"M365 Copilot": 1, "Copilot Studio": 1, "GitHub Copilot": 5}}, {"date": "2026-10-07", "counts": {"Copilot Studio": 12, "M365 Copilot": 5, "管理・ライセンス": 3}}, {"date": "2026-10-08", "counts": {"Power Automate・AI Builder": 2, "GitHub Copilot": 5}}], "topics": [{"product": "Power Automate・AI Builder", "important": true, "status": "開発中", "title": "Power Automate for desktop: Flowchart modeでデスクトップフローを視覚的に作成・編集", "what": "デスクトップフロー(PC操作の自動化)を、アクションをつないだフローチャート図で作成・確認・編集できる新しい画面が追加されます。", "summary": ["アクションがノードとして表示され、実行経路が図で見えるため、条件分岐・ループ・分岐ロジックを含む複雑な自動化の理解・構築・保守が楽になる", "新規フローをFlowchart modeで直接作成できるほか、既存フローをSequence mode(従来の順次表示)とFlowchart modeの間で切り替え可能", "提供時期: Preview=October CY2026、GA=November CY2026(ロードマップ表記)", "提供範囲: Worldwide (Standard Multi-Tenant)、GCC、GCC High、DoD。プラットフォームはDesktop", "出典に前提ライセンス・管理者設定の記載なし"], "facts": [{"label": "ステータス", "value": "In development(開発中)"}, {"label": "対象ユーザー", "value": "デスクトップフローの作成者(maker)"}, {"label": "提供時期", "value": "Preview: October CY2026 / GA: November CY2026"}, {"label": "提供範囲", "value": "Worldwide, GCC, GCC High, DoD"}, {"label": "ロードマップID", "value": "573292"}, {"label": "最終更新", "value": "10/06"}], "why": "複雑なデスクトップフローを引き継ぐ・レビューする場面で全体像を把握しやすくなる見込み。Preview開始後に既存フローでの表示切替を試す準備ができる。", "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573292", "source": "ロードマップ", "updated": "10/06"}, {"product": "Power Automate・AI Builder", "important": true, "status": "Launched", "title": "デスクトップフローをScheduled Triggersで直接スケジュール実行", "what": "デスクトップフローを、中間のスケジュール済みクラウドフローを作らずに、Power Automateのオートメーションセンターから直接定期実行できるようになります。", "summary": ["日次・週次・月次・時間単位・カスタムの繰り返しパターンを設定でき、実行するマシンまたはマシングループも選択できる", "今後の予定実行を一元的な画面で確認・監視できる", "有人(attended)・無人(unattended)の両方のデスクトップフローが対象", "提供時期: Preview=September CY2026、GA=October CY2026。ステータスは Launched", "提供範囲: Worldwide (Standard Multi-Tenant)、GCC、GCC High、DoD(プラットフォーム表記はWeb)"], "facts": [{"label": "ステータス", "value": "Launched"}, {"label": "対象ユーザー", "value": "デスクトップフローの作成者(maker)"}, {"label": "提供時期", "value": "Preview: September CY2026 / GA: October CY2026"}, {"label": "提供範囲", "value": "Worldwide, GCC, GCC High, DoD"}, {"label": "ロードマップID", "value": "573278"}, {"label": "最終更新", "value": "10/06"}], "why": "定期実行のためだけに作っていたクラウドフローを減らせる見込みで、管理対象が減る。既存のスケジュール用クラウドフローの置き換え候補を洗い出すとよい。", "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573278", "source": "ロードマップ", "updated": "10/06"}, {"product": "GitHub Copilot", "important": false, "status": "GA", "title": "Claude Haiku 5.5 が GitHub Copilot で一般提供", "what": "Anthropicの軽量モデル Claude Haiku 5.5 が GitHub Copilot のモデルピッカーで選べるようになりました。", "summary": ["サブエージェント、簡単な編集、ターミナル作業など高速・大量処理向けのモデル。初期テストではClaude Sonnet 5と同等のコーディング性能で、トークン・手数が大幅に少ないと記載", "対象プラン: Copilot Pro / Pro+ / Max / Business / Enterprise。VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、github.com、モバイル、JetBrains、Xcode、Eclipseで選択可", "課金: 使った分に応じた課金(usage-based billing)でプロバイダーの定価ベース", "BusinessとEnterpriseは管理者がCopilot設定のモデルポリシーでアクセスを管理。新モデルは既定で自動有効(管理者が無効化していない場合)。ロールアウトは段階的"], "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot", "source": "GitHub changelog", "updated": "10/07"}, {"product": "GitHub Copilot", "important": false, "status": "GA", "title": "GitHub Copilot のローカルサンドボックスが一般提供", "what": "Copilotが実行するコマンドやツールを、自分のPC上で権限を絞った隔離環境(サンドボックス)内で動かせるようになりました。", "summary": ["対象: Copilot CLI、GitHub Copilot app、Agent Hostを使うVS Codeセッション。Microsoft eXecution Container (MXC) がWindows・macOS・Linuxのネイティブ制御に変換", "ファイル/ディレクトリの読み書き、インターネット・ローカルネットワーク、GitやGitHub CLIの認証情報へのアクセスを制限可能。ローカルMCP・言語サーバーにも適用(対応範囲内)", "組織は管理設定でサンドボックスを必須化し、開発者が弱められないポリシーを強制できる", "GitHub Copilotに追加費用なしで含まれる。サンドボックスはツール実行の隔離で、使用モデルとは独立"], "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available", "source": "GitHub changelog", "updated": "10/07"}, {"product": "GitHub Copilot", "important": false, "status": "Preview", "title": "漏えいシークレット検出向けの専用モデル", "what": "パスワードのようにトークン形式でない秘密情報も、周辺コードの文脈から検出する専用の微調整モデルが導入されます。", "summary": ["対象機能: シークレットスキャンのアラート、push protection、GitHub Copilot security review。コードや文章は生成しない検出専用モデル", "提供状況: AI検出のPasswordアラート利用者は自動で新モデルに更新済み。push protectionでのAI検出はprivate preview、Copilot CLI/appの /security-review でのAIシークレットスキャンは近日private preview", "課金: AI検出アラートはGHSP・GHASに追加費用なしで含まれる。push protectionの新オプトインチェックと security review は GitHub AI Credits を消費(計画中の課金モデルを事前告知)"], "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection", "source": "GitHub changelog", "updated": "10/07"}, {"product": "GitHub Copilot", "important": false, "status": "Launched", "title": "Copilot CLIでローカルモデルを検出可能に", "what": "Copilot CLIの /model で、起動中のローカルOllamaにあるモデルを一覧から見つけて選べるようになりました。", "summary": ["CLIバージョン1.0.94-0以降。/model で設定済みモデル・GitHub提供のクラウドモデルと並んでOllamaのモデルが表示される", "発見されただけでは追加されない。プロバイダーとエンドポイントを確認し「Add and use for this session」または「Add without switching」を選ぶ。再起動不要", "前提: Ollamaとモデルは事前にインストール済み、モデルはツール呼び出しとストリーミングに対応していること。接続失敗は理由付きでピッカーに表示", "注意: ローカルモデル選択でオフラインモードやテレメトリ無効化にはならない(オフラインは COPILOT_OFFLINE=true で明示)。リモートプロバイダーはオフラインモードでもプロンプトを受け取り得る"], "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli", "source": "GitHub changelog", "updated": "10/07"}, {"product": "GitHub Copilot", "important": false, "status": "お知らせ", "title": "IDE更新でCopilot使用状況メトリクスのエージェント活動を復旧", "what": "Copilotの使用状況メトリクスでエージェント活動が減って見える不具合の原因が判明し、各IDEで修正が配信されます。", "summary": ["原因: 複数のIDEがエージェントセッションをCopilot SDKへ移行した際、IDEの識別情報が付かず、大半が集計から漏れるか一部がCopilot CLI活動として計上された。Copilot SDKをエージェントモードに使う版のみ影響", "修正版: VS Code 1.139.0以降は提供中。Visual Studioは18.12(10月予定)、JetBrainsは次のプラグイン(10月下旬まで予定)、Eclipseは次のプラグイン(11月予定)。全IDEで2026年11月までに完了見込み", "更新後は活動が使用状況ダッシュボードとAPIで再び計上される。更新前の活動は後から復元できない。IDEを集中管理している場合は修正版へ直接移行する計画が可能"], "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics", "source": "GitHub changelog", "updated": "10/06"}], "diffs": [], "fetch": [{"site": "learn.microsoft.com 監視ページ8件(Copilot Studio 3件 / whats-new / M365 release notes / extensibility / released-versions / release-plan)", "ok": true, "note": "HTTP 200。意味のある差分なし(最終更新日・体裁のみ)。released-versions と release-plan は今回からスナップショット追加(release-planは2025wave2へリダイレクト)"}, {"site": "microsoft.com ロードマップJSON", "ok": true, "note": "HTTP 200。48時間以内の更新13件はすべて既報"}, {"site": "microsoft.com ブログRSS(Copilot Studio / M365 / Power Platform)", "ok": true, "note": "HTTP 200。過去72時間の記事なし(最新は9/25〜10/01)"}, {"site": "techcommunity.microsoft.com", "ok": true, "note": "HTTP 200。最新は9/30以前の記事で対象外"}, {"site": "github.blog changelog RSS", "ok": true, "note": "HTTP 200。過去48時間の5件は既報"}, {"site": "github.com/MicrosoftDocs/m365copilot-docs", "ok": false, "note": "HTTP 403(ネットワーク未許可)"}, {"site": "WebSearch(英語・日本語)", "ok": true, "note": "一次情報の新規項目なし(第三者記事のみ)"}]}</script>
 <script>
 (function () {
   var D;
@@ -298,17 +311,31 @@ footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
     m.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
     c.appendChild(m);
     c.appendChild(el("h3", null, t.title));
-    if (t.what) c.appendChild(el("p", null, t.what));
-    if (t.impact) c.appendChild(el("p", "impact", "影響: " + t.impact));
+    if (t.what) c.appendChild(el("p", "lead", t.what));
+    var pts = points(t);
+    if (pts) c.appendChild(pts);
+    if (t.facts && t.facts.length) {
+      var dl = el("dl", "facts");
+      t.facts.forEach(function (f) { dl.appendChild(el("dt", null, f.label)); dl.appendChild(el("dd", null, f.value)); });
+      c.appendChild(dl);
+    }
+    var why = t.why || (t.impact ? "対象: " + t.impact : "");
+    if (why) { var w = el("div", "why"); w.appendChild(el("b", null, "実務への影響")); w.appendChild(el("span", null, why)); c.appendChild(w); }
     if (t.url) c.appendChild(srcLink(t));
     tw.appendChild(c);
   });
+  function points(t) {
+    if (!t.summary || !t.summary.length) return null;
+    var ul = el("ul", "points");
+    t.summary.forEach(function (x) { ul.appendChild(el("li", null, x)); });
+    return ul;
+  }
 
   // product groups
   var gw = document.getElementById("groups");
   PRODUCTS.forEach(function (p, idx) {
     var list = topics.filter(function (t) { return t.product === p; });
-    var d = el("details", "group"); if (list.length && idx < 2) d.open = true;
+    var d = el("details", "group"); if (list.length) d.open = true;
     var s = el("summary"); s.appendChild(el("span", null, p)); s.appendChild(el("span", "cnt", list.length + "件"));
     d.appendChild(s);
     var ul = el("ul", "items");
@@ -320,7 +347,15 @@ footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
       r.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
       if (t.source) r.appendChild(el("span", null, t.source));
       if (t.updated) r.appendChild(el("span", null, t.updated));
-      li.appendChild(a); li.appendChild(r); ul.appendChild(li);
+      li.appendChild(a); li.appendChild(r);
+      if (t.what && !t.important) li.appendChild(el("p", "lead", t.what));
+      var pts = points(t);
+      if (pts && !t.important) {
+        var more = el("details", "more");
+        more.appendChild(el("summary", null, "要点を見る（" + t.summary.length + "）"));
+        more.appendChild(pts); li.appendChild(more);
+      }
+      ul.appendChild(li);
     });
     d.appendChild(ul); gw.appendChild(d);
   });
