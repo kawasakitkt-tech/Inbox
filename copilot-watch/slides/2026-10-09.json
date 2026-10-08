@@ -1,0 +1,143 @@
+{
+ "date": "2026-10-09",
+ "generatedAt": "2026-10-09 08:05 JST",
+ "baseline": false,
+ "notice": "新着なし：過去48時間に新規の対象トピックはありませんでした",
+ "counts": {},
+ "history": [
+  {
+   "date": "2026-10-05",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 5,
+    "Power Automate・AI Builder": 1,
+    "管理・ライセンス": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "counts": {
+    "M365 Copilot": 1,
+    "Copilot Studio": 1,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "counts": {
+    "Copilot Studio": 12,
+    "M365 Copilot": 5,
+    "管理・ライセンス": 3
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "counts": {
+    "Power Automate・AI Builder": 2,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "counts": {}
+  }
+ ],
+ "topics": [],
+ "diffs": [
+  {
+   "page": "Copilot Studio: prompt-model-availability",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-availability",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: prompt-model-settings",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-settings",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: authoring-select-agent-model",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: whats-new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "M365 Copilot release notes",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "M365 Copilot extensibility whats-new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio released-versions",
+   "url": "https://learn.microsoft.com/en-us/power-platform/released-versions/copilotstudio",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Power Platform release plan（2025wave2へリダイレクト、新ウェーブなし）",
+   "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/",
+   "added": [],
+   "removed": []
+  }
+ ],
+ "fetch": [
+  {
+   "site": "Learn 8ページ",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "M365ロードマップJSON（1900件、対象期間の未報告変更なし）",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "ロードマップRSS",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "Copilot Studio Blog RSS（48h以内0件）",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "Microsoft 365 Blog RSS（48h以内0件）",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "Power Platform Blog RSS（Power Pages リージョン拡大1件のみ・対象外）",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "Tech Community（最新記事は9月付け）",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "GitHub Copilot changelog RSS（48h内5件は既報）",
+   "ok": true,
+   "note": "200"
+  },
+  {
+   "site": "github.com（m365copilot-docs atom）",
+   "ok": false,
+   "note": "403 ネットワーク未許可"
+  }
+ ]
+}
