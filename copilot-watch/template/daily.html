@@ -109,11 +109,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .spark text { fill: var(--muted); font-family: var(--font-data); font-size: 10px; }
 
 /* topic cards */
-.topic { display: grid; gap: 8px; }
+.topic { display: grid; gap: 10px; }
 .topic-meta { display: flex; flex-wrap: wrap; gap: 6px; }
 .topic h3 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 700; text-wrap: pretty; }
 .topic p { margin: 0; font-size: 15px; }
-.topic .impact { color: var(--muted); font-size: 14px; }
+.lead { color: var(--fg); }
+.points { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 15px; }
+.points li::marker { color: var(--accent); }
+.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; font-size: 13px;
+  border-top: 1px solid var(--line); padding-top: 10px; }
+.facts dt { color: var(--muted); font-weight: 700; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.why { background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; font-size: 14px; display: grid; gap: 2px; }
+.why b { font-size: 12px; letter-spacing: .04em; color: var(--accent); }
+.items .lead { margin: 0; font-size: 14px; }
+.items .more summary { cursor: pointer; font-size: 13px; color: var(--accent); font-weight: 700; padding: 6px 0; min-height: 32px; list-style: none; }
+.items .more summary::-webkit-details-marker { display: none; }
+.items .more[open] summary { color: var(--muted); }
+.items .more .points { font-size: 14px; padding-bottom: 4px; }
 .src {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
   min-height: 44px; padding: 8px 12px; border-radius: 10px; background: var(--bg);
@@ -298,17 +311,31 @@ footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
     m.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
     c.appendChild(m);
     c.appendChild(el("h3", null, t.title));
-    if (t.what) c.appendChild(el("p", null, t.what));
-    if (t.impact) c.appendChild(el("p", "impact", "影響: " + t.impact));
+    if (t.what) c.appendChild(el("p", "lead", t.what));
+    var pts = points(t);
+    if (pts) c.appendChild(pts);
+    if (t.facts && t.facts.length) {
+      var dl = el("dl", "facts");
+      t.facts.forEach(function (f) { dl.appendChild(el("dt", null, f.label)); dl.appendChild(el("dd", null, f.value)); });
+      c.appendChild(dl);
+    }
+    var why = t.why || (t.impact ? "対象: " + t.impact : "");
+    if (why) { var w = el("div", "why"); w.appendChild(el("b", null, "実務への影響")); w.appendChild(el("span", null, why)); c.appendChild(w); }
     if (t.url) c.appendChild(srcLink(t));
     tw.appendChild(c);
   });
+  function points(t) {
+    if (!t.summary || !t.summary.length) return null;
+    var ul = el("ul", "points");
+    t.summary.forEach(function (x) { ul.appendChild(el("li", null, x)); });
+    return ul;
+  }
 
   // product groups
   var gw = document.getElementById("groups");
   PRODUCTS.forEach(function (p, idx) {
     var list = topics.filter(function (t) { return t.product === p; });
-    var d = el("details", "group"); if (list.length && idx < 2) d.open = true;
+    var d = el("details", "group"); if (list.length) d.open = true;
     var s = el("summary"); s.appendChild(el("span", null, p)); s.appendChild(el("span", "cnt", list.length + "件"));
     d.appendChild(s);
     var ul = el("ul", "items");
@@ -320,7 +347,15 @@ footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
       r.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
       if (t.source) r.appendChild(el("span", null, t.source));
       if (t.updated) r.appendChild(el("span", null, t.updated));
-      li.appendChild(a); li.appendChild(r); ul.appendChild(li);
+      li.appendChild(a); li.appendChild(r);
+      if (t.what && !t.important) li.appendChild(el("p", "lead", t.what));
+      var pts = points(t);
+      if (pts && !t.important) {
+        var more = el("details", "more");
+        more.appendChild(el("summary", null, "要点を見る（" + t.summary.length + "）"));
+        more.appendChild(pts); li.appendChild(more);
+      }
+      ul.appendChild(li);
     });
     d.appendChild(ul); gw.appendChild(d);
   });
