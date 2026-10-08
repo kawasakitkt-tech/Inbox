@@ -1,8 +1,8 @@
 {
  "date": "2026-10-08",
- "generatedAt": "2026-10-08 07:55 JST",
+ "generatedAt": "2026-10-08 17:25 JST",
  "baseline": false,
- "notice": "監視ページ7件に意味のある差分なし。新着はロードマップのPower Automate 2件とGitHub changelog 5件。",
+ "notice": "同日再実行。監視ページ7件に意味のある差分なし、ロードマップ新着なし（既報のみ）。",
  "counts": {
   "Power Automate・AI Builder": 2,
   "GitHub Copilot": 5
@@ -133,11 +133,6 @@
    "note": "403 ブロック"
   },
   {
-   "site": "Copilot Studio Blog / Power Platform Blog",
-   "ok": true,
-   "note": "取得可。新着記事なし（直近は2026年9月版What's new）"
-  },
-  {
    "site": "techcommunity.microsoft.com",
    "ok": false,
    "note": "記事一覧を取得できず"
@@ -146,6 +141,11 @@
    "site": "WebSearch",
    "ok": true,
    "note": "新規の一次情報なし（MC1483844は既報）"
+  },
+  {
+   "site": "microsoft.com ブログRSS（Copilot Studio / M365 / Power Platform）",
+   "ok": false,
+   "note": "HTTP 403（再実行時）。ロードマップJSONは取得可"
   }
  ]
 }
