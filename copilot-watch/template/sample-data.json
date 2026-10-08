@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05 20:58 JST",
+  "baseline": true,
+  "notice": "サンプルデータ（10/5 の内容をもとに作成）。",
+  "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 5,
+    "Power Automate・AI Builder": 1,
+    "管理・ライセンス": 2,
+    "GitHub Copilot": 0
+  },
+  "history": [
+    {
+      "date": "2026-10-05",
+      "counts": {
+        "M365 Copilot": 7,
+        "Copilot Studio": 5,
+        "Power Automate・AI Builder": 1,
+        "管理・ライセンス": 2
+      }
+    }
+  ],
+  "topics": [
+    {
+      "product": "M365 Copilot",
+      "important": true,
+      "status": "GA予定",
+      "title": "Copilot Chat のモデルセレクターから使用量課金（UBB）モデルを選択可能に",
+      "what": "Copilot Chat の画面上部のモデル選択から、通常のモデルに加えて使用量課金（UBB）対象のモデルを選べるようになります。",
+      "impact": "テナント管理者のクレジット設定が前提",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=571400",
+      "source": "ロードマップ",
+      "updated": "10/02",
+      "summary": [
+        "UBB = Usage-Based Billing。ライセンス定額ではなく、使った分だけクレジットを消費する課金方式",
+        "ユーザーはモデルセレクターで UBB 対象モデルを選んで利用する",
+        "前提：テナント管理者がクレジットを割り当てておくこと"
+      ],
+      "facts": [
+        {
+          "label": "ステータス",
+          "value": "In development（GA 予定）"
+        },
+        {
+          "label": "対象",
+          "value": "Microsoft 365 Copilot Chat 利用者／テナント管理者"
+        },
+        {
+          "label": "ロードマップ ID",
+          "value": "571400"
+        },
+        {
+          "label": "最終更新",
+          "value": "2026-10-02"
+        }
+      ],
+      "why": "上位モデルを一部ユーザーだけに従量課金で開放できる。導入前に、誰にどれだけクレジットを割り当てるかの予算ルールを決めておく必要がある。"
+    },
+    {
+      "product": "Copilot Studio",
+      "important": true,
+      "status": "開発中",
+      "title": "エージェントの自己学習",
+      "what": "完了した実行から改善し、繰り返されるツール手順をワークフロー化します。",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570432",
+      "source": "ロードマップ",
+      "updated": "09/30",
+      "summary": [
+        "完了した実行の結果からエージェントが自動で改善する",
+        "繰り返し使われるツール手順を検出し、ワークフローとして固定化する",
+        "作成者は手動でトピックやフローを作り直す手間が減る"
+      ],
+      "facts": [
+        {
+          "label": "ステータス",
+          "value": "In development"
+        },
+        {
+          "label": "対象",
+          "value": "Copilot Studio のエージェント作成者"
+        },
+        {
+          "label": "ロードマップ ID",
+          "value": "570432"
+        }
+      ],
+      "why": "運用中エージェントの改善サイクルが自動化される。挙動が変わる可能性があるため、変更履歴の確認方法を後で押さえておきたい。"
+    },
+    {
+      "product": "Copilot Studio",
+      "important": true,
+      "status": "開発中",
+      "title": "エージェントに永続アイデンティティ（専用 M365 アカウント・メールボックス）",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570430",
+      "source": "ロードマップ",
+      "updated": "09/30"
+    },
+    {
+      "product": "Copilot Studio",
+      "important": true,
+      "status": "Launched",
+      "title": "Agent Readiness：ビルド画面で常時表示の健全性チェック",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=568762",
+      "source": "ロードマップ",
+      "updated": "10/01"
+    },
+    {
+      "product": "Copilot Studio",
+      "important": true,
+      "status": "Preview",
+      "title": "real-time エージェントで GPT-5-Chat を利用可能",
+      "what": "2026年7月の whats-new 記載（ベースライン時点）。同時に新規エージェントごとの Entra Agent ID 自動作成も開始。",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+      "source": "ページ監視"
+    },
+    {
+      "product": "M365 Copilot",
+      "important": true,
+      "status": "Launched",
+      "title": "Excel Agent（グラフ・要約・分析）",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=543422",
+      "source": "ロードマップ",
+      "updated": "09/29"
+    },
+    {
+      "product": "Copilot Studio",
+      "important": false,
+      "status": "未確認",
+      "title": "GPT-6 Astra / Claude Fable 5.1 が Copilot Studio で利用可能との第三者報道",
+      "what": "一次情報では未確認。",
+      "url": "https://learn.microsoft.com/en-us/power-platform/released-versions/copilotstudio/2026.6.3",
+      "source": "Web検索"
+    },
+    {
+      "product": "M365 Copilot",
+      "important": false,
+      "status": "開発中",
+      "title": "組織プロンプトの委任公開",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=569425",
+      "source": "ロードマップ",
+      "updated": "09/29"
+    },
+    {
+      "product": "M365 Copilot",
+      "important": false,
+      "status": "ロールアウト中",
+      "title": "Copilot Chat がスキャン済み PDF の検索一致を改善",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=559613",
+      "source": "ロードマップ",
+      "updated": "10/01"
+    },
+    {
+      "product": "M365 Copilot",
+      "important": false,
+      "status": "開発中",
+      "title": "Deep citations（参照元の該当箇所へ直接リンク）",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=523223",
+      "source": "ロードマップ",
+      "updated": "09/30"
+    },
+    {
+      "product": "M365 Copilot",
+      "important": false,
+      "status": "開発中",
+      "title": "Outlook：Copilot で対話的にメール作成・編集・書式設定",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573280",
+      "source": "ロードマップ",
+      "updated": "10/02"
+    },
+    {
+      "product": "Power Automate・AI Builder",
+      "important": false,
+      "status": "Launched",
+      "title": "Business Central：レポート受信箱の新 API で Power Automate / MCP による出力自動化",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573318",
+      "source": "ロードマップ",
+      "updated": "09/30"
+    },
+    {
+      "product": "管理・ライセンス",
+      "important": false,
+      "status": "Launched",
+      "title": "GCC / GCC High / DoD 向け Copilot Chat 使用状況レポート",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=567121",
+      "source": "ロードマップ",
+      "updated": "09/29"
+    },
+    {
+      "product": "管理・ライセンス",
+      "important": false,
+      "status": "開発中",
+      "title": "Viva Copilot Analytics：Agent Dashboard の指標エクスポート",
+      "url": "https://www.microsoft.com/microsoft-365/roadmap?id=560538",
+      "source": "ロードマップ",
+      "updated": "09/29"
+    }
+  ],
+  "diffs": [],
+  "fetch": [
+    {
+      "site": "learn.microsoft.com 監視ページ 7件",
+      "ok": true
+    },
+    {
+      "site": "learn.microsoft.com/ai-builder/whats-new",
+      "ok": false,
+      "note": "404：ページが存在しません"
+    },
+    {
+      "site": "M365 ロードマップ RSS",
+      "ok": true
+    },
+    {
+      "site": "Copilot Studio Blog / Power Platform Blog",
+      "ok": false,
+      "note": "取得はできたが記事一覧を抽出できず"
+    },
+    {
+      "site": "techcommunity.microsoft.com",
+      "ok": false,
+      "note": "トップのみ取得（動的描画）"
+    },
+    {
+      "site": "github.com MicrosoftDocs/m365copilot-docs",
+      "ok": false,
+      "note": "403：ブロック"
+    }
+  ]
+}
