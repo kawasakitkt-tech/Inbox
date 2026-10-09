@@ -1,0 +1,424 @@
+{
+ "date": "2026-10-10",
+ "generatedAt": "2026-10-10 07:55 JST",
+ "baseline": false,
+ "notice": "重要4件：Office in Copilot、Notebooks更新、Copilot Studio共有プラグイン、Scheduling with Copilot",
+ "counts": {
+  "M365 Copilot": 7,
+  "Copilot Studio": 1,
+  "管理・ライセンス": 1,
+  "GitHub Copilot": 1
+ },
+ "history": [
+  {
+   "date": "2026-10-05",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 5,
+    "Power Automate・AI Builder": 1,
+    "管理・ライセンス": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "counts": {
+    "M365 Copilot": 1,
+    "Copilot Studio": 1,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "counts": {
+    "Copilot Studio": 12,
+    "M365 Copilot": 5,
+    "管理・ライセンス": 3
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "counts": {
+    "Power Automate・AI Builder": 2,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "counts": {}
+  },
+  {
+   "date": "2026-10-10",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 1,
+    "管理・ライセンス": 1,
+    "GitHub Copilot": 1
+   }
+  }
+ ],
+ "topics": [
+  {
+   "product": "M365 Copilot",
+   "important": true,
+   "status": "Frontier（先行提供）",
+   "title": "Copilotアプリ内で Word・Excel・PowerPoint を作成・編集・共同編集できる「Office in Copilot」が提供開始",
+   "what": "Copilotアプリ（Chat／Cowork）の中で、Office本来の編集・共同作業機能を使って文書・表・資料を仕上げられるようになります。",
+   "summary": [
+    "Chatで依頼すると Word文書などが会話の横に開き、フォローアップのプロンプトや直接編集で仕上げられる（会話履歴は保持）",
+    "共有・コメント・共同編集・プレゼンス（誰が編集中か表示）が同じ画面で使え、変更はリアルタイム反映",
+    "「Library」で Word/Excel/PowerPoint の最近のファイル、ページ、AI生成画像を一覧・再開できる。ファイルは OneDrive 保存で、書式・コメント・権限・バージョン履歴とセキュリティラベル等のガバナンスを継承",
+    "モデルは選択または Auto 任せにできる。PowerPoint のブランド維持・テンプレ適用、Excel の変更レビュー・グラフ推奨、Skills／コネクタも利用可",
+    "提供は Frontier 顧客向けで ChatとCoworkから（記事では「rolling out today」）。一般提供時期は記載なし"
+   ],
+   "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-office-in-the-new-microsoft-copilot-app/4561230",
+   "source": "Tech Community（Microsoft Copilot Blog）",
+   "updated": "10/09",
+   "facts": [
+    {
+     "label": "ステータス",
+     "value": "Frontier 向けにロールアウト中"
+    },
+    {
+     "label": "対象ユーザー",
+     "value": "Frontier 顧客（Chat／Cowork）"
+    },
+    {
+     "label": "提供時期",
+     "value": "2026/10/09 公開記事で「today」"
+    },
+    {
+     "label": "提供範囲",
+     "value": "記載なし"
+    },
+    {
+     "label": "最終更新",
+     "value": "10/09"
+    }
+   ],
+   "why": "Frontier プログラム参加テナントでは、資料作成を Office アプリに切り替えずに Copilot 内で完結できる見込み。一般提供前に、OneDrive 保存と既存の共有・ラベル運用が合うか確認しておく価値があります。"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": true,
+   "status": "Frontier / 一部GA",
+   "title": "Copilot Notebooks 10月アップデート：Copilotがノートブック作成・Office編集・定期タスク自動化・インタラクティブレポート",
+   "what": "Copilot Notebooks（プロジェクト単位でMicrosoft 365の情報を集めて質問・成果物作成ができる作業場）で、作成・編集・自動化が大きく広がります。",
+   "summary": [
+    "ノートブックをCopilotに目的を伝えて作成（関連資料を自動で集める）。参照に Markdown／TXT／RTF が追加（GA）。ナビペインでの並べ替え等のUX刷新",
+    "Copilotが参照の管理や Word/Excel/PowerPoint 単体ファイルの作成・編集を代行。プロンプトの対象を「ノートブックのみ」か「Work and web」に切替、モデル選択も可（Frontier）",
+    "毎朝のブリーフや週次資料などを繰り返しタスクとして自動化（数週間以内に提供予定）",
+    "Office のフル機能で直接編集、インタラクティブレポート、チャットからのPDF作成（Frontier）。成果物の提案（Suggested artifacts）はGA",
+    "音声概要は Outlookメール・Teams会議/チャット・OneNote/Loop・txt を材料にでき、「Critique and Debate」形式、トピック別エピソード、OneDrive保存（秘密度ラベル継承）が数週間以内に追加"
+   ],
+   "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-notebooks--october-2026/4559105",
+   "source": "Tech Community（Microsoft Copilot Blog）",
+   "updated": "10/09",
+   "facts": [
+    {
+     "label": "ステータス",
+     "value": "一部GA／多くはFrontier、自動化・音声は数週間以内"
+    },
+    {
+     "label": "対象ユーザー",
+     "value": "Copilot Notebooks 利用者"
+    },
+    {
+     "label": "提供時期",
+     "value": "2026/10 公開記事の「coming weeks」"
+    },
+    {
+     "label": "提供範囲",
+     "value": "記載なし"
+    },
+    {
+     "label": "最終更新",
+     "value": "10/09"
+    }
+   ],
+   "why": "プロジェクト管理や定例レポート作成を担う部署は、Frontier で定期タスク自動化とレポート生成を試す準備をするとよさそう。音声概要の秘密度ラベル対応で、情報保護ポリシー面の確認もしやすくなる見込み。"
+  },
+  {
+   "product": "Copilot Studio",
+   "important": true,
+   "status": "開発中（Preview 2026年10月 / GA 2026年11月）",
+   "title": "Copilot Studio が Microsoft 共有プラグインレジストリに接続し、プラグインを探して使えるように",
+   "what": "Copilot Studio で、Microsoft 全体で共有されるプラグインの登録簿（レジストリ）から、プラグインやコネクタを探して使えるようになります。",
+   "summary": [
+    "Copilot Studio が共有プラグインレジストリに接続し、プラグイン・コネクタ・その他の機能を見つけて追加しやすくなる",
+    "Microsoft の AI エコシステム全体で、エージェントを拡張する方法が一貫する",
+    "ロードマップ上は Preview が 2026年10月、GA が 2026年11月",
+    "対象クラウドは Worldwide（標準マルチテナント）、プラットフォームは Web",
+    "ロードマップ記載は上記のみ。具体的な画面・設定場所は未公開"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570669",
+   "source": "M365ロードマップ",
+   "updated": "10/09",
+   "facts": [
+    {
+     "label": "ステータス",
+     "value": "In development"
+    },
+    {
+     "label": "対象ユーザー",
+     "value": "Copilot Studio のメーカー"
+    },
+    {
+     "label": "提供時期",
+     "value": "Preview 2026年10月 / GA 2026年11月"
+    },
+    {
+     "label": "提供範囲",
+     "value": "Worldwide (Standard Multi-Tenant)"
+    },
+    {
+     "label": "ロードマップID",
+     "value": "570669"
+    },
+    {
+     "label": "最終更新",
+     "value": "10/09"
+    }
+   ],
+   "why": "エージェント開発者は、既存のコネクタ選定フローがレジストリ経由に変わる可能性があり、Preview 開始時に検索・利用できるプラグインを確認する準備が必要になりそう。"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": true,
+   "status": "開発中（GA 2026年10月）",
+   "title": "「Scheduling with Copilot」：チャットで予定調整・会議室予約・アジェンダ作成・招待送信（GCC／GCC High／DoD）",
+   "what": "Copilotに頼むだけで、空き時間探し・会議室予約・アジェンダ案作成・招待送信までチャット内で行えるようになります。",
+   "summary": [
+    "同僚との会議や予定をチャットから依頼でき、Copilotが空き時間を探して会議室を予約し、アジェンダを下書きして招待を送る",
+    "対象クラウドは GCC・GCC High・DoD（政府系クラウド）",
+    "プラットフォームは Android・Desktop・iOS・Teams and Surface Devices・Web",
+    "ロードマップ上の GA は 2026年10月、ステータスは In development"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573220",
+   "source": "M365ロードマップ",
+   "updated": "10/09",
+   "facts": [
+    {
+     "label": "ステータス",
+     "value": "In development"
+    },
+    {
+     "label": "対象ユーザー",
+     "value": "M365 Copilot 利用者"
+    },
+    {
+     "label": "提供時期",
+     "value": "GA 2026年10月"
+    },
+    {
+     "label": "提供範囲",
+     "value": "GCC / GCC High / DoD"
+    },
+    {
+     "label": "ロードマップID",
+     "value": "573220"
+    },
+    {
+     "label": "最終更新",
+     "value": "10/09"
+    }
+   ],
+   "why": "政府系クラウドのテナントでも予定調整をCopilotに任せられる見込み。会議室予約などの権限・ポリシー設定の確認が必要になりそう。"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "開発中（GA 2026年11月）",
+   "title": "SharePoint の Copilot：AI入力ウィジェットとコンテンツプレビューを追加",
+   "what": "SharePoint の Copilot で、作成中のコンテンツをチャットと並べて確認し、フォームの回答をチャットに返せるようになります。",
+   "summary": [
+    "保存済み・未保存のプレビューコンテンツをチャットと並べて表示",
+    "作成された HTML フォームを操作し、回答を確認してチャットに送信できる",
+    "GA は 2026年11月、Worldwide、Web",
+    "ステータスは In development"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=574106",
+   "source": "M365ロードマップ",
+   "updated": "10/08"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "開発中（GA 2026年11月）",
+   "title": "OneNote の Copilot Chat が作成・編集・整理に対応（ページ／セクション／ノートブック操作）",
+   "what": "OneNote の Copilot が、新規コンテンツ作成に加え、編集モードでページ等を直接作成・名前変更・削除できるようになります。",
+   "summary": [
+    "編集モードで、ページ・セクション・ノートブックの作成・名前変更・削除と、ページ内容の追加・編集が可能",
+    "WorkIQ の情報を取り込み、Word・Excel・PowerPoint ファイル作成など他ワークフローも実行",
+    "GA は 2026年11月、Worldwide、Desktop",
+    "ステータスは In development"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573446",
+   "source": "M365ロードマップ",
+   "updated": "10/08"
+  },
+  {
+   "product": "管理・ライセンス",
+   "important": false,
+   "status": "開発中（Preview/GA 2026年10月）",
+   "title": "Viva Insights の Agent 365 ダッシュボードがサードパーティ製プラットフォームのエージェントも集計",
+   "what": "Copilot Analytics 内のダッシュボードで、他社プラットフォームのエージェントの利用レポートも見られるようになります。",
+   "summary": [
+    "Viva Insights（Copilot Analytics）の Agent 365 ダッシュボードにサードパーティ製エージェントのレポートを追加",
+    "組織内のエージェント活動をより包括的に把握できる",
+    "Preview・GA ともロードマップ上 2026年10月、Worldwide、Web",
+    "ステータスは In development"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573169",
+   "source": "M365ロードマップ",
+   "updated": "10/08"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "開発中（Preview/GA 2026年10月）",
+   "title": "Copilot Notebooks の音声概要：トピック別エピソード、Critique/Debate 形式、秘密度ラベル対応",
+   "what": "ノートブックの音声概要が、長い内容をトピック別に聞け、新しい形式や情報保護にも対応します。",
+   "summary": [
+    "トピックごとのエピソードで長い内容を移動しやすくなる",
+    "新形式「Critique」「Debate」を追加",
+    "秘密度ラベルによる情報保護に対応し、対象コンテンツの種類も拡大",
+    "Preview・GA は 2026年10月、Worldwide、Desktop/Web"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570966",
+   "source": "M365ロードマップ",
+   "updated": "10/08"
+  },
+  {
+   "product": "M365 Copilot",
+   "important": false,
+   "status": "Launched",
+   "title": "Teams 会議の recap で、録画・文字起こし・AI要約・ノートを削除できるボタンを追加",
+   "what": "会議主催者が recap ページの削除ボタンで、会議で生成されたコンテンツをまとめて削除できます。",
+   "summary": [
+    "対象は録画・文字起こし・AI 要約・ノート。会議で共有したファイルは削除されない",
+    "操作は recap ページの新しい削除ボタン（会議主催者向け）",
+    "Worldwide・GCC・GCC High、Desktop。ロードマップ上の公開目安は 2026年5月、ステータスは Launched",
+    "Targeted Release タグあり"
+   ],
+   "url": "https://www.microsoft.com/microsoft-365/roadmap?id=557170",
+   "source": "M365ロードマップ",
+   "updated": "10/08"
+  },
+  {
+   "product": "GitHub Copilot",
+   "important": false,
+   "status": "発表",
+   "title": "Copilot code review：組織への課金方式と、レビュー依頼者の制御を追加",
+   "what": "Copilot コードレビューの利用料をメンバー個人ではなく組織に請求でき、外部ライセンスによる依頼も制限できます。",
+   "summary": [
+    "組織設定 Copilot → Policies の「Choose how members with a Copilot license are billed」で Member（既定）か Organization を選択",
+    "Organization は AI Credits の従量課金有効化が必要で、予算設定も可能。Member でクォータ枯渇時はレビューが失敗",
+    "「Only allow Copilot code review to be triggered by authorized users」で、組織・企業提供のライセンス保有者のみ依頼可能に（個人ライセンス等を排除）",
+    "組織レベルで有効にするとリポジトリ管理者は無効化できない"
+   ],
+   "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
+   "source": "GitHub changelog",
+   "updated": "10/08"
+  }
+ ],
+ "diffs": [
+  {
+   "page": "Copilot Studio: prompt-model-availability",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-availability",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: prompt-model-settings",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-settings",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: authoring-select-agent-model",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: whats-new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "M365 Copilot: release-notes",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "M365 Copilot: extensibility whats-new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Power Platform: released-versions/copilotstudio",
+   "url": "https://learn.microsoft.com/en-us/power-platform/released-versions/copilotstudio",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Power Platform: release-plan",
+   "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/",
+   "added": [],
+   "removed": []
+  }
+ ],
+ "fetch": [
+  {
+   "site": "Learn 監視8ページ（200）",
+   "ok": true,
+   "note": "release-plan は 2025wave2 のまま"
+  },
+  {
+   "site": "M365ロードマップ JSON（200）",
+   "ok": true,
+   "note": "1911件"
+  },
+  {
+   "site": "M365ロードマップ RSS（200）",
+   "ok": true
+  },
+  {
+   "site": "Copilot Studio Blog RSS（200）",
+   "ok": true,
+   "note": "過去48時間の新着なし"
+  },
+  {
+   "site": "Microsoft Copilot Blog RSS（200）",
+   "ok": true,
+   "note": "新着なし"
+  },
+  {
+   "site": "Power Platform Blog RSS（200）",
+   "ok": true,
+   "note": "Power Pages 記事のみ（対象外）"
+  },
+  {
+   "site": "Tech Community Microsoft Copilot Blog（200）",
+   "ok": true,
+   "note": "10/9 の2記事"
+  },
+  {
+   "site": "GitHub Copilot changelog RSS（200）",
+   "ok": true
+  },
+  {
+   "site": "github.com m365copilot-docs atom（403）",
+   "ok": false,
+   "note": "ネットワーク未許可"
+  },
+  {
+   "site": "WebSearch（英語）",
+   "ok": true,
+   "note": "補完。一次情報なしは未採用"
+  }
+ ]
+}

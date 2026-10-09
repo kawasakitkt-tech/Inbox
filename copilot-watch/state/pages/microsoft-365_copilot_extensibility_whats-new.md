@@ -1,40 +1,126 @@
-Table of contents 
+
+
+
+
+  Table of contents 
 
  Exit editor mode
 
- Ask Learn
 
- Ask Learn
 
- Reading mode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+   Ask Learn
+
+   Ask Learn
+
+  
+
+
+
+   Reading mode
 
  Table of contents
 
- Read in English
+   Read in English
 
- Add
+   Add
 
- Add to Plans
+   Add to Plans
 
- Edit
+   Edit
 
- Copy Markdown
+------------------------------------------------------------------------
 
- Print
+     Copy Markdown
+
+   Print
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+
+
+
 
  Note
 
- Access to this page requires authorization. You can try signing in or changing directories.
+Access to this page requires authorization. You can try signing in or changing directories.
 
- Access to this page requires authorization. You can try changing directories.
+Access to this page requires authorization. You can try changing directories.
+
+
+
+
+
+
+
+
 
 # What's new in Microsoft 365 Copilot extensibility
 
- Feedback
 
- Summarize this article for me
 
-## 
+
+
+
+
+   Feedback
+
+
+
+
+
+
+
+
+
+  
+
+ Summarize this article for me 
+
+
+
+
+
+
+
+
+
+## In this article
+
+
 
 As a developer, you can extend, enrich, and customize Microsoft 365 Copilot for the unique way your customers work. This article provides the latest information about what's new in Microsoft 365 Copilot extensibility.
 
@@ -44,7 +130,7 @@ For the latest information, announcements, and news about preview and generally 
 
 ### Review requested packages in the Package Management API
 
-Administrators can review the agents that users in the organization requested by filtering List packages on the requestStatus or requestType property.
+Administrators can review the agents that users in the organization requested by filtering List packages on the `requestStatus` or `requestType` property.
 
 ## July 2026
 
@@ -52,17 +138,14 @@ Administrators can review the agents that users in the organization requested by
 
 A new version of the declarative agent manifest schema is available. Declarative agent manifest schema version 1.8 adds the following features:
 
-- Added the new EmailActions capability to enable write operations on email such as triage, supervised send, delete, inbox rules, auto-reply, and folder management.
-
-- Added the new MeetingActions capability to enable meeting and calendar actions such as scheduling events, creating time-finding polls, and surfacing time insights.
-
-- Added the file property to the worker agent object as an alternative to id for referencing worker agents by file path.
-
-- Added the embedded_resource_snapshot_id property to the embedded knowledge object.
+- Added the new `EmailActions` capability to enable write operations on email such as triage, supervised send, delete, inbox rules, auto-reply, and folder management.
+- Added the new `MeetingActions` capability to enable meeting and calendar actions such as scheduling events, creating time-finding polls, and surfacing time insights.
+- Added the `file` property to the worker agent object as an alternative to `id` for referencing worker agents by file path.
+- Added the `embedded_resource_snapshot_id` property to the embedded knowledge object.
 
 ### New version parameter for Copilot usage reports API
 
-A version parameter is added to the getMicrosoft365CopilotUserCountSummary, getMicrosoft365CopilotUserCountTrend, and getMicrosoft365CopilotUsageUserDetail APIs that developers can use to request extra information in the generated reports.
+A `version` parameter is added to the getMicrosoft365CopilotUserCountSummary, getMicrosoft365CopilotUserCountTrend, and getMicrosoft365CopilotUsageUserDetail APIs that developers can use to request extra information in the generated reports.
 
 ## May 2026
 
@@ -78,30 +161,21 @@ When you build an agent in Agent Builder in Microsoft 365 Copilot, you can now s
 
 A new version of the declarative agent manifest schema is available. Declarative agent manifest schema version 1.7 adds the following features:
 
-- Added the optional editorial_answers property so agents can match semantically similar user queries to predefined question and answer pairs.
-
-- Added the optional default_response_mode property to the Behavior overrides object so you can set the agent's default mode to Auto, Think deeper, or Quick response.
-
-- Added the optional depends_on property to the Conversation starters object to specify capability dependencies for conversation starters.
+- Added the optional `editorial_answers` property so agents can match semantically similar user queries to predefined question and answer pairs.
+- Added the optional `default_response_mode` property to the Behavior overrides object so you can set the agent's default mode to `Auto`, `Think deeper`, or `Quick response`.
+- Added the optional `depends_on` property to the Conversation starters object to specify capability dependencies for conversation starters.
 
 ### New agent templates added to Agent Builder
 
 Agent Builder now includes eight new agent templates to help you quickly build declarative agents for common workplace scenarios:
 
 - AI Learning Advisor
-
 - Executive Briefing Agent
-
 - My Company Policy
-
 - Personal News Digest
-
 - Plan My Day
-
 - Project Delta Digest
-
 - SME Finder
-
 - Status Update Agent
 
 For more information, see Agent templates overview.
@@ -153,61 +227,98 @@ The Microsoft 365 Copilot Retrieval API is now available to users without a Micr
 ## Related content
 
 - Microsoft 365 Copilot extensibility overview
-
 - What's new history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
 
 ## Feedback
 
- Was this page helpful?
 
- Yes
 
- No
+Was this page helpful?
 
- No
 
- Need help with this topic?
 
- Want to try using Ask Learn to clarify or guide you through this topic?
+   Yes
 
- Ask Learn
+   No
 
- Ask Learn
+   No
 
- Suggest a fix? 
 
-## 
- Additional resources
 
-- 
+Need help with this topic?
 
- Last updated on 
- 2026-08-27
+Want to try using Ask Learn to clarify or guide you through this topic?
 
-### 
 
- Was this page helpful?
 
- Need help with this topic?
 
- Want to try using Ask Learn to clarify or guide you through this topic?
 
- Ask Learn
+  
 
- Ask Learn
+   Ask Learn
 
- Suggest a fix? 
+   Ask Learn
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
--
+
+
+   Suggest a fix?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+## Additional resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+-  Last updated on 2026-08-27 
+
+
+
+

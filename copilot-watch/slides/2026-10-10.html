@@ -1,0 +1,388 @@
+<title>Copilot デイリー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: phone-first vertical deck. Sticky chip nav, one "page" per section, cards stacked full-width. */
+:root {
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --fg: #172231;
+  --muted: #5a6677;
+  --line: #d8dee7;
+  --accent: #2d55c8;
+  --accent-soft: #e3e9fa;
+  --ga: #1c7a4c;     --ga-soft: #dcf1e5;
+  --pre: #9a5b00;    --pre-soft: #fbecd2;
+  --dep: #b4322d;    --dep-soft: #f8dfdd;
+  --dev: #4f5b6b;    --dev-soft: #e5e9ef;
+  --unv: #6b4fb0;    --unv-soft: #ece6f8;
+  --font-display: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141c; --surface: #18202b; --fg: #e6ebf2; --muted: #9aa6b6; --line: #2a3442;
+    --accent: #8aa8ff; --accent-soft: #212d4a;
+    --ga: #6fd3a0; --ga-soft: #17352a; --pre: #f2bd63; --pre-soft: #3a2c12;
+    --dep: #ff8f88; --dep-soft: #44201f; --dev: #b2bccb; --dev-soft: #262f3b;
+    --unv: #c3adff; --unv-soft: #2c2445;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141c; --surface: #18202b; --fg: #e6ebf2; --muted: #9aa6b6; --line: #2a3442;
+  --accent: #8aa8ff; --accent-soft: #212d4a;
+  --ga: #6fd3a0; --ga-soft: #17352a; --pre: #f2bd63; --pre-soft: #3a2c12;
+  --dep: #ff8f88; --dep-soft: #44201f; --dev: #b2bccb; --dev-soft: #262f3b;
+  --unv: #c3adff; --unv-soft: #2c2445;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 560px; margin: 0 auto; padding-inline: 16px; padding-block: 0 48px; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+/* sticky nav */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  margin-inline: -16px; padding: 10px 16px;
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  flex: none; text-decoration: none; color: var(--fg);
+  font-size: 13px; font-weight: 700; padding: 8px 14px; min-height: 36px;
+  border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.nav a .n { font-family: var(--font-data); color: var(--muted); font-weight: 500; }
+
+/* pages */
+.page { padding-top: 28px; display: grid; gap: 14px; }
+.page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.page-head h2 { margin: 0; font-family: var(--font-display); font-size: 21px; font-weight: 700; text-wrap: balance; }
+.page-no { font-family: var(--font-data); font-size: 12px; color: var(--muted); flex: none; }
+.lede { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* cover */
+.cover { padding-top: 22px; display: grid; gap: 16px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.cover h1 { margin: 0; font-family: var(--font-display); font-size: 30px; line-height: 1.25; font-weight: 700; }
+.cover h1 .date { display: block; font-family: var(--font-data); font-size: 15px; font-weight: 500; color: var(--accent); margin-bottom: 4px; }
+.total { display: flex; align-items: baseline; gap: 10px; }
+.total b { font-family: var(--font-data); font-size: 52px; line-height: 1; font-weight: 500; font-variant-numeric: tabular-nums; }
+.total span { color: var(--muted); font-size: 14px; }
+.notice { background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+.notice:empty { display: none; }
+.statusbar { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* pills */
+.pill { display: inline-flex; align-items: center; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.s-ga  { color: var(--ga);  background: var(--ga-soft); }
+.s-pre { color: var(--pre); background: var(--pre-soft); }
+.s-dep { color: var(--dep); background: var(--dep-soft); }
+.s-dev { color: var(--dev); background: var(--dev-soft); }
+.s-unv { color: var(--unv); background: var(--unv-soft); border: 1px dashed var(--unv); }
+.prod  { color: var(--accent); background: var(--accent-soft); }
+
+/* bars */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; min-width: 0; }
+.bars { display: grid; gap: 12px; }
+.bar-row { display: grid; gap: 4px; }
+.bar-label { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; }
+.bar-label b { font-family: var(--font-data); font-weight: 500; font-variant-numeric: tabular-nums; }
+.bar-track { height: 10px; border-radius: 999px; background: var(--dev-soft); overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 999px; background: var(--accent); }
+.spark-title { font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+.spark svg { width: 100%; height: auto; display: block; }
+.spark text { fill: var(--muted); font-family: var(--font-data); font-size: 10px; }
+
+/* topic cards */
+.topic { display: grid; gap: 10px; }
+.topic-meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.topic h3 { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 700; text-wrap: pretty; }
+.topic p { margin: 0; font-size: 15px; }
+.lead { color: var(--fg); }
+.points { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 15px; }
+.points li::marker { color: var(--accent); }
+.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; font-size: 13px;
+  border-top: 1px solid var(--line); padding-top: 10px; }
+.facts dt { color: var(--muted); font-weight: 700; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.why { background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; font-size: 14px; display: grid; gap: 2px; }
+.why b { font-size: 12px; letter-spacing: .04em; color: var(--accent); }
+.items .lead { margin: 0; font-size: 14px; }
+.items .more summary { cursor: pointer; font-size: 13px; color: var(--accent); font-weight: 700; padding: 6px 0; min-height: 32px; list-style: none; }
+.items .more summary::-webkit-details-marker { display: none; }
+.items .more[open] summary { color: var(--muted); }
+.items .more .points { font-size: 14px; padding-bottom: 4px; }
+.src {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 44px; padding: 8px 12px; border-radius: 10px; background: var(--bg);
+  text-decoration: none; font-size: 13px; color: var(--accent); font-weight: 700;
+}
+.src span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.src .via { color: var(--muted); font-weight: 400; flex: none; }
+
+/* product list */
+details.group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+details.group summary {
+  list-style: none; cursor: pointer; padding: 14px 16px; min-height: 48px;
+  display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 700;
+}
+details.group summary::-webkit-details-marker { display: none; }
+details.group summary::after { content: "＋"; color: var(--muted); }
+details.group[open] summary::after { content: "－"; }
+details.group summary .cnt { font-family: var(--font-data); color: var(--muted); font-weight: 500; margin-left: auto; }
+.items { list-style: none; margin: 0; padding: 0 16px 8px; }
+.items li { padding: 12px 0; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+.items li a { font-size: 15px; text-decoration: none; color: var(--fg); font-weight: 700; }
+.items li .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+
+/* diffs */
+.diff h3 { margin: 0 0 8px; font-size: 15px; }
+.diff ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.diff li { font-size: 14px; padding: 8px 10px; border-radius: 8px; overflow-wrap: anywhere; }
+.diff li.add { background: var(--ga-soft); }
+.diff li.del { background: var(--dep-soft); text-decoration: line-through; text-decoration-color: var(--dep); }
+.diff li::before { font-family: var(--font-data); font-weight: 500; margin-right: 6px; }
+.diff li.add::before { content: "+"; color: var(--ga); }
+.diff li.del::before { content: "−"; color: var(--dep); }
+.empty { color: var(--muted); font-size: 14px; margin: 0; }
+
+/* fetch status */
+.fetch { list-style: none; margin: 0; padding: 0; }
+.fetch li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.fetch li:first-child { border-top: 0; }
+.fetch .ok { color: var(--ga); font-weight: 700; }
+.fetch .ng { color: var(--dep); font-weight: 700; }
+.fetch .site { overflow-wrap: anywhere; min-width: 0; }
+.fetch .note { display: block; color: var(--muted); font-size: 12px; }
+footer { padding-top: 28px; font-size: 12px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header class="cover" id="cover">
+    <div class="eyebrow">MICROSOFT COPILOT · DAILY WATCH</div>
+    <h1><span class="date" id="c-date"></span>Copilot デイリー</h1>
+    <div class="total"><b id="c-total">0</b><span>件の更新を検知</span></div>
+    <div class="statusbar" id="c-status"></div>
+    <p class="notice" id="c-notice"></p>
+  </header>
+
+  <nav class="nav" aria-label="セクション">
+    <a href="#p-chart"><span class="n">1</span>件数</a>
+    <a href="#p-top"><span class="n">2</span>重要</a>
+    <a href="#p-prod"><span class="n">3</span>製品別</a>
+    <a href="#p-diff"><span class="n">4</span>ページ差分</a>
+    <a href="#p-fetch"><span class="n">5</span>取得状況</a>
+  </nav>
+
+  <section class="page" id="p-chart">
+    <div class="page-head"><h2>製品別の件数</h2><span class="page-no">1 / 5</span></div>
+    <div class="card bars" id="bars"></div>
+    <div class="card spark"><p class="spark-title">過去14日の検知件数</p><div id="spark"></div></div>
+  </section>
+
+  <section class="page" id="p-top">
+    <div class="page-head"><h2>重要トピック</h2><span class="page-no">2 / 5</span></div>
+    <p class="lede">影響の大きい順。ステータスは出典の表記に基づきます。</p>
+    <div id="topics" style="display:grid;gap:12px"></div>
+  </section>
+
+  <section class="page" id="p-prod">
+    <div class="page-head"><h2>製品別一覧</h2><span class="page-no">3 / 5</span></div>
+    <div id="groups" style="display:grid;gap:10px"></div>
+  </section>
+
+  <section class="page" id="p-diff">
+    <div class="page-head"><h2>ページ差分</h2><span class="page-no">4 / 5</span></div>
+    <p class="lede">監視中の Microsoft Learn ページで、前日から変わった行です。</p>
+    <div id="diffs" style="display:grid;gap:12px"></div>
+  </section>
+
+  <section class="page" id="p-fetch">
+    <div class="page-head"><h2>取得状況</h2><span class="page-no">5 / 5</span></div>
+    <div class="card"><ul class="fetch" id="fetch"></ul></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script id="report-data" type="application/json">{"date": "2026-10-10", "generatedAt": "2026-10-10 07:55 JST", "baseline": false, "notice": "重要4件：Office in Copilot、Notebooks更新、Copilot Studio共有プラグイン、Scheduling with Copilot", "counts": {"M365 Copilot": 7, "Copilot Studio": 1, "管理・ライセンス": 1, "GitHub Copilot": 1}, "history": [{"date": "2026-10-05", "counts": {"M365 Copilot": 7, "Copilot Studio": 5, "Power Automate・AI Builder": 1, "管理・ライセンス": 2}}, {"date": "2026-10-06", "counts": {"M365 Copilot": 1, "Copilot Studio": 1, "GitHub Copilot": 5}}, {"date": "2026-10-07", "counts": {"Copilot Studio": 12, "M365 Copilot": 5, "管理・ライセンス": 3}}, {"date": "2026-10-08", "counts": {"Power Automate・AI Builder": 2, "GitHub Copilot": 5}}, {"date": "2026-10-09", "counts": {}}, {"date": "2026-10-10", "counts": {"M365 Copilot": 7, "Copilot Studio": 1, "管理・ライセンス": 1, "GitHub Copilot": 1}}], "topics": [{"product": "M365 Copilot", "important": true, "status": "Frontier（先行提供）", "title": "Copilotアプリ内で Word・Excel・PowerPoint を作成・編集・共同編集できる「Office in Copilot」が提供開始", "what": "Copilotアプリ（Chat／Cowork）の中で、Office本来の編集・共同作業機能を使って文書・表・資料を仕上げられるようになります。", "summary": ["Chatで依頼すると Word文書などが会話の横に開き、フォローアップのプロンプトや直接編集で仕上げられる（会話履歴は保持）", "共有・コメント・共同編集・プレゼンス（誰が編集中か表示）が同じ画面で使え、変更はリアルタイム反映", "「Library」で Word/Excel/PowerPoint の最近のファイル、ページ、AI生成画像を一覧・再開できる。ファイルは OneDrive 保存で、書式・コメント・権限・バージョン履歴とセキュリティラベル等のガバナンスを継承", "モデルは選択または Auto 任せにできる。PowerPoint のブランド維持・テンプレ適用、Excel の変更レビュー・グラフ推奨、Skills／コネクタも利用可", "提供は Frontier 顧客向けで ChatとCoworkから（記事では「rolling out today」）。一般提供時期は記載なし"], "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-office-in-the-new-microsoft-copilot-app/4561230", "source": "Tech Community（Microsoft Copilot Blog）", "updated": "10/09", "facts": [{"label": "ステータス", "value": "Frontier 向けにロールアウト中"}, {"label": "対象ユーザー", "value": "Frontier 顧客（Chat／Cowork）"}, {"label": "提供時期", "value": "2026/10/09 公開記事で「today」"}, {"label": "提供範囲", "value": "記載なし"}, {"label": "最終更新", "value": "10/09"}], "why": "Frontier プログラム参加テナントでは、資料作成を Office アプリに切り替えずに Copilot 内で完結できる見込み。一般提供前に、OneDrive 保存と既存の共有・ラベル運用が合うか確認しておく価値があります。"}, {"product": "M365 Copilot", "important": true, "status": "Frontier / 一部GA", "title": "Copilot Notebooks 10月アップデート：Copilotがノートブック作成・Office編集・定期タスク自動化・インタラクティブレポート", "what": "Copilot Notebooks（プロジェクト単位でMicrosoft 365の情報を集めて質問・成果物作成ができる作業場）で、作成・編集・自動化が大きく広がります。", "summary": ["ノートブックをCopilotに目的を伝えて作成（関連資料を自動で集める）。参照に Markdown／TXT／RTF が追加（GA）。ナビペインでの並べ替え等のUX刷新", "Copilotが参照の管理や Word/Excel/PowerPoint 単体ファイルの作成・編集を代行。プロンプトの対象を「ノートブックのみ」か「Work and web」に切替、モデル選択も可（Frontier）", "毎朝のブリーフや週次資料などを繰り返しタスクとして自動化（数週間以内に提供予定）", "Office のフル機能で直接編集、インタラクティブレポート、チャットからのPDF作成（Frontier）。成果物の提案（Suggested artifacts）はGA", "音声概要は Outlookメール・Teams会議/チャット・OneNote/Loop・txt を材料にでき、「Critique and Debate」形式、トピック別エピソード、OneDrive保存（秘密度ラベル継承）が数週間以内に追加"], "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/whats-new-in-notebooks--october-2026/4559105", "source": "Tech Community（Microsoft Copilot Blog）", "updated": "10/09", "facts": [{"label": "ステータス", "value": "一部GA／多くはFrontier、自動化・音声は数週間以内"}, {"label": "対象ユーザー", "value": "Copilot Notebooks 利用者"}, {"label": "提供時期", "value": "2026/10 公開記事の「coming weeks」"}, {"label": "提供範囲", "value": "記載なし"}, {"label": "最終更新", "value": "10/09"}], "why": "プロジェクト管理や定例レポート作成を担う部署は、Frontier で定期タスク自動化とレポート生成を試す準備をするとよさそう。音声概要の秘密度ラベル対応で、情報保護ポリシー面の確認もしやすくなる見込み。"}, {"product": "Copilot Studio", "important": true, "status": "開発中（Preview 2026年10月 / GA 2026年11月）", "title": "Copilot Studio が Microsoft 共有プラグインレジストリに接続し、プラグインを探して使えるように", "what": "Copilot Studio で、Microsoft 全体で共有されるプラグインの登録簿（レジストリ）から、プラグインやコネクタを探して使えるようになります。", "summary": ["Copilot Studio が共有プラグインレジストリに接続し、プラグイン・コネクタ・その他の機能を見つけて追加しやすくなる", "Microsoft の AI エコシステム全体で、エージェントを拡張する方法が一貫する", "ロードマップ上は Preview が 2026年10月、GA が 2026年11月", "対象クラウドは Worldwide（標準マルチテナント）、プラットフォームは Web", "ロードマップ記載は上記のみ。具体的な画面・設定場所は未公開"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570669", "source": "M365ロードマップ", "updated": "10/09", "facts": [{"label": "ステータス", "value": "In development"}, {"label": "対象ユーザー", "value": "Copilot Studio のメーカー"}, {"label": "提供時期", "value": "Preview 2026年10月 / GA 2026年11月"}, {"label": "提供範囲", "value": "Worldwide (Standard Multi-Tenant)"}, {"label": "ロードマップID", "value": "570669"}, {"label": "最終更新", "value": "10/09"}], "why": "エージェント開発者は、既存のコネクタ選定フローがレジストリ経由に変わる可能性があり、Preview 開始時に検索・利用できるプラグインを確認する準備が必要になりそう。"}, {"product": "M365 Copilot", "important": true, "status": "開発中（GA 2026年10月）", "title": "「Scheduling with Copilot」：チャットで予定調整・会議室予約・アジェンダ作成・招待送信（GCC／GCC High／DoD）", "what": "Copilotに頼むだけで、空き時間探し・会議室予約・アジェンダ案作成・招待送信までチャット内で行えるようになります。", "summary": ["同僚との会議や予定をチャットから依頼でき、Copilotが空き時間を探して会議室を予約し、アジェンダを下書きして招待を送る", "対象クラウドは GCC・GCC High・DoD（政府系クラウド）", "プラットフォームは Android・Desktop・iOS・Teams and Surface Devices・Web", "ロードマップ上の GA は 2026年10月、ステータスは In development"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573220", "source": "M365ロードマップ", "updated": "10/09", "facts": [{"label": "ステータス", "value": "In development"}, {"label": "対象ユーザー", "value": "M365 Copilot 利用者"}, {"label": "提供時期", "value": "GA 2026年10月"}, {"label": "提供範囲", "value": "GCC / GCC High / DoD"}, {"label": "ロードマップID", "value": "573220"}, {"label": "最終更新", "value": "10/09"}], "why": "政府系クラウドのテナントでも予定調整をCopilotに任せられる見込み。会議室予約などの権限・ポリシー設定の確認が必要になりそう。"}, {"product": "M365 Copilot", "important": false, "status": "開発中（GA 2026年11月）", "title": "SharePoint の Copilot：AI入力ウィジェットとコンテンツプレビューを追加", "what": "SharePoint の Copilot で、作成中のコンテンツをチャットと並べて確認し、フォームの回答をチャットに返せるようになります。", "summary": ["保存済み・未保存のプレビューコンテンツをチャットと並べて表示", "作成された HTML フォームを操作し、回答を確認してチャットに送信できる", "GA は 2026年11月、Worldwide、Web", "ステータスは In development"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=574106", "source": "M365ロードマップ", "updated": "10/08"}, {"product": "M365 Copilot", "important": false, "status": "開発中（GA 2026年11月）", "title": "OneNote の Copilot Chat が作成・編集・整理に対応（ページ／セクション／ノートブック操作）", "what": "OneNote の Copilot が、新規コンテンツ作成に加え、編集モードでページ等を直接作成・名前変更・削除できるようになります。", "summary": ["編集モードで、ページ・セクション・ノートブックの作成・名前変更・削除と、ページ内容の追加・編集が可能", "WorkIQ の情報を取り込み、Word・Excel・PowerPoint ファイル作成など他ワークフローも実行", "GA は 2026年11月、Worldwide、Desktop", "ステータスは In development"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573446", "source": "M365ロードマップ", "updated": "10/08"}, {"product": "管理・ライセンス", "important": false, "status": "開発中（Preview/GA 2026年10月）", "title": "Viva Insights の Agent 365 ダッシュボードがサードパーティ製プラットフォームのエージェントも集計", "what": "Copilot Analytics 内のダッシュボードで、他社プラットフォームのエージェントの利用レポートも見られるようになります。", "summary": ["Viva Insights（Copilot Analytics）の Agent 365 ダッシュボードにサードパーティ製エージェントのレポートを追加", "組織内のエージェント活動をより包括的に把握できる", "Preview・GA ともロードマップ上 2026年10月、Worldwide、Web", "ステータスは In development"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=573169", "source": "M365ロードマップ", "updated": "10/08"}, {"product": "M365 Copilot", "important": false, "status": "開発中（Preview/GA 2026年10月）", "title": "Copilot Notebooks の音声概要：トピック別エピソード、Critique/Debate 形式、秘密度ラベル対応", "what": "ノートブックの音声概要が、長い内容をトピック別に聞け、新しい形式や情報保護にも対応します。", "summary": ["トピックごとのエピソードで長い内容を移動しやすくなる", "新形式「Critique」「Debate」を追加", "秘密度ラベルによる情報保護に対応し、対象コンテンツの種類も拡大", "Preview・GA は 2026年10月、Worldwide、Desktop/Web"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=570966", "source": "M365ロードマップ", "updated": "10/08"}, {"product": "M365 Copilot", "important": false, "status": "Launched", "title": "Teams 会議の recap で、録画・文字起こし・AI要約・ノートを削除できるボタンを追加", "what": "会議主催者が recap ページの削除ボタンで、会議で生成されたコンテンツをまとめて削除できます。", "summary": ["対象は録画・文字起こし・AI 要約・ノート。会議で共有したファイルは削除されない", "操作は recap ページの新しい削除ボタン（会議主催者向け）", "Worldwide・GCC・GCC High、Desktop。ロードマップ上の公開目安は 2026年5月、ステータスは Launched", "Targeted Release タグあり"], "url": "https://www.microsoft.com/microsoft-365/roadmap?id=557170", "source": "M365ロードマップ", "updated": "10/08"}, {"product": "GitHub Copilot", "important": false, "status": "発表", "title": "Copilot code review：組織への課金方式と、レビュー依頼者の制御を追加", "what": "Copilot コードレビューの利用料をメンバー個人ではなく組織に請求でき、外部ライセンスによる依頼も制限できます。", "summary": ["組織設定 Copilot → Policies の「Choose how members with a Copilot license are billed」で Member（既定）か Organization を選択", "Organization は AI Credits の従量課金有効化が必要で、予算設定も可能。Member でクォータ枯渇時はレビューが失敗", "「Only allow Copilot code review to be triggered by authorized users」で、組織・企業提供のライセンス保有者のみ依頼可能に（個人ライセンス等を排除）", "組織レベルで有効にするとリポジトリ管理者は無効化できない"], "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls", "source": "GitHub changelog", "updated": "10/08"}], "diffs": [{"page": "Copilot Studio: prompt-model-availability", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-availability", "added": [], "removed": []}, {"page": "Copilot Studio: prompt-model-settings", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-settings", "added": [], "removed": []}, {"page": "Copilot Studio: authoring-select-agent-model", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model", "added": [], "removed": []}, {"page": "Copilot Studio: whats-new", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new", "added": [], "removed": []}, {"page": "M365 Copilot: release-notes", "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes", "added": [], "removed": []}, {"page": "M365 Copilot: extensibility whats-new", "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new", "added": [], "removed": []}, {"page": "Power Platform: released-versions/copilotstudio", "url": "https://learn.microsoft.com/en-us/power-platform/released-versions/copilotstudio", "added": [], "removed": []}, {"page": "Power Platform: release-plan", "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/", "added": [], "removed": []}], "fetch": [{"site": "Learn 監視8ページ（200）", "ok": true, "note": "release-plan は 2025wave2 のまま"}, {"site": "M365ロードマップ JSON（200）", "ok": true, "note": "1911件"}, {"site": "M365ロードマップ RSS（200）", "ok": true}, {"site": "Copilot Studio Blog RSS（200）", "ok": true, "note": "過去48時間の新着なし"}, {"site": "Microsoft Copilot Blog RSS（200）", "ok": true, "note": "新着なし"}, {"site": "Power Platform Blog RSS（200）", "ok": true, "note": "Power Pages 記事のみ（対象外）"}, {"site": "Tech Community Microsoft Copilot Blog（200）", "ok": true, "note": "10/9 の2記事"}, {"site": "GitHub Copilot changelog RSS（200）", "ok": true}, {"site": "github.com m365copilot-docs atom（403）", "ok": false, "note": "ネットワーク未許可"}, {"site": "WebSearch（英語）", "ok": true, "note": "補完。一次情報なしは未採用"}]}</script>
+<script>
+(function () {
+  var D;
+  try { D = JSON.parse(document.getElementById("report-data").textContent); }
+  catch (e) { D = { date: "", topics: [], counts: {}, history: [], diffs: [], fetch: [], notice: "レポートデータを読み込めませんでした。" }; }
+
+  var PRODUCTS = ["M365 Copilot", "Copilot Studio", "Power Automate・AI Builder", "管理・ライセンス", "GitHub Copilot"];
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function statusClass(s) {
+    s = (s || "").toLowerCase();
+    if (/未確認|unverified/.test(s)) return "s-unv";
+    if (/廃止|retire|deprecat/.test(s)) return "s-dep";
+    if (/preview|プレビュー/.test(s)) return "s-pre";
+    if (/予定|開発|planned|development/.test(s)) return "s-dev";
+    if (/ga|launched|一般提供|リリース済|rolling|ロールアウト/.test(s)) return "s-ga";
+    return "s-dev";
+  }
+  function host(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u || ""; } }
+  function srcLink(t) {
+    var a = el("a", "src"); a.href = t.url; a.target = "_blank"; a.rel = "noopener";
+    a.appendChild(el("span", null, host(t.url) + " ↗"));
+    if (t.source) a.appendChild(el("span", "via", t.source));
+    return a;
+  }
+
+  var topics = D.topics || [];
+  var counts = D.counts || {};
+  var total = 0; Object.keys(counts).forEach(function (k) { total += counts[k] || 0; });
+
+  // cover
+  document.getElementById("c-date").textContent = D.date || "";
+  document.getElementById("c-total").textContent = total;
+  document.getElementById("c-notice").textContent = D.notice || "";
+  document.title = "Copilot デイリー " + (D.date || "");
+  var tally = {};
+  topics.forEach(function (t) { var c = statusClass(t.status); tally[c] = (tally[c] || 0) + 1; });
+  [["s-ga", "GA・提供中"], ["s-pre", "Preview"], ["s-dev", "開発中・予定"], ["s-dep", "廃止予告"], ["s-unv", "未確認"]].forEach(function (p) {
+    if (tally[p[0]]) document.getElementById("c-status").appendChild(el("span", "pill " + p[0], p[1] + " " + tally[p[0]]));
+  });
+
+  // bars
+  var max = 0; PRODUCTS.forEach(function (p) { max = Math.max(max, counts[p] || 0); });
+  var bars = document.getElementById("bars");
+  PRODUCTS.forEach(function (p) {
+    var v = counts[p] || 0, row = el("div", "bar-row"), lab = el("div", "bar-label");
+    lab.appendChild(el("span", null, p)); lab.appendChild(el("b", null, String(v)));
+    var tr = el("div", "bar-track"), f = el("div", "bar-fill");
+    f.style.width = (max ? (v / max) * 100 : 0) + "%";
+    tr.appendChild(f); row.appendChild(lab); row.appendChild(tr); bars.appendChild(row);
+  });
+
+  // sparkline (last 14 entries)
+  var hist = (D.history || []).slice(-14);
+  var sp = document.getElementById("spark");
+  if (hist.length < 2) {
+    sp.appendChild(el("p", "empty", "推移は2日分以上たまると表示されます。"));
+  } else {
+    var W = 320, H = 110, L = 22, R = 10, T = 12, B = 22;
+    var vals = hist.map(function (h) { var s = 0; Object.keys(h.counts || {}).forEach(function (k) { s += h.counts[k] || 0; }); return s; });
+    var vmax = Math.max.apply(null, vals.concat([1]));
+    var x = function (i) { return L + (W - L - R) * i / (hist.length - 1); };
+    var y = function (v) { return T + (H - T - B) * (1 - v / vmax); };
+    var pts = vals.map(function (v, i) { return x(i).toFixed(1) + "," + y(v).toFixed(1); });
+    var ns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(ns, "svg"); svg.setAttribute("viewBox", "0 0 " + W + " " + H); svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "過去" + hist.length + "日の検知件数の推移");
+    function add(tag, attrs, txt) { var n = document.createElementNS(ns, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); if (txt != null) n.textContent = txt; svg.appendChild(n); return n; }
+    add("line", { x1: L, x2: W - R, y1: y(0), y2: y(0), stroke: "var(--line)", "stroke-width": 1 });
+    add("line", { x1: L, x2: W - R, y1: y(vmax), y2: y(vmax), stroke: "var(--line)", "stroke-width": 1, "stroke-dasharray": "3 3" });
+    add("text", { x: 0, y: y(vmax) + 3 }, String(vmax));
+    add("text", { x: 0, y: y(0) + 3 }, "0");
+    add("polygon", { points: x(0) + "," + y(0) + " " + pts.join(" ") + " " + x(hist.length - 1) + "," + y(0), fill: "var(--accent-soft)", stroke: "none" });
+    add("polyline", { points: pts.join(" "), fill: "none", stroke: "var(--accent)", "stroke-width": 2, "stroke-linejoin": "round" });
+    var li = hist.length - 1;
+    add("circle", { cx: x(li), cy: y(vals[li]), r: 4, fill: "var(--accent)" });
+    add("text", { x: x(0), y: H - 6 }, (hist[0].date || "").slice(5));
+    add("text", { x: x(li), y: H - 6, "text-anchor": "end" }, (hist[li].date || "").slice(5));
+    sp.appendChild(svg);
+  }
+
+  // important topics
+  var tw = document.getElementById("topics");
+  var imp = topics.filter(function (t) { return t.important; });
+  if (!imp.length) tw.appendChild(el("p", "empty", "今日は重要トピックはありません。"));
+  imp.forEach(function (t) {
+    var c = el("article", "card topic"), m = el("div", "topic-meta");
+    m.appendChild(el("span", "pill prod", t.product));
+    m.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
+    c.appendChild(m);
+    c.appendChild(el("h3", null, t.title));
+    if (t.what) c.appendChild(el("p", "lead", t.what));
+    var pts = points(t);
+    if (pts) c.appendChild(pts);
+    if (t.facts && t.facts.length) {
+      var dl = el("dl", "facts");
+      t.facts.forEach(function (f) { dl.appendChild(el("dt", null, f.label)); dl.appendChild(el("dd", null, f.value)); });
+      c.appendChild(dl);
+    }
+    var why = t.why || (t.impact ? "対象: " + t.impact : "");
+    if (why) { var w = el("div", "why"); w.appendChild(el("b", null, "実務への影響")); w.appendChild(el("span", null, why)); c.appendChild(w); }
+    if (t.url) c.appendChild(srcLink(t));
+    tw.appendChild(c);
+  });
+  function points(t) {
+    if (!t.summary || !t.summary.length) return null;
+    var ul = el("ul", "points");
+    t.summary.forEach(function (x) { ul.appendChild(el("li", null, x)); });
+    return ul;
+  }
+
+  // product groups
+  var gw = document.getElementById("groups");
+  PRODUCTS.forEach(function (p, idx) {
+    var list = topics.filter(function (t) { return t.product === p; });
+    var d = el("details", "group"); if (list.length) d.open = true;
+    var s = el("summary"); s.appendChild(el("span", null, p)); s.appendChild(el("span", "cnt", list.length + "件"));
+    d.appendChild(s);
+    var ul = el("ul", "items");
+    if (!list.length) { var e = el("li"); e.appendChild(el("span", "empty", "該当なし")); ul.appendChild(e); }
+    list.forEach(function (t) {
+      var li = el("li"), a = el("a", null, t.title);
+      if (t.url) { a.href = t.url; a.target = "_blank"; a.rel = "noopener"; }
+      var r = el("div", "row");
+      r.appendChild(el("span", "pill " + statusClass(t.status), t.status || "状態不明"));
+      if (t.source) r.appendChild(el("span", null, t.source));
+      if (t.updated) r.appendChild(el("span", null, t.updated));
+      li.appendChild(a); li.appendChild(r);
+      if (t.what && !t.important) li.appendChild(el("p", "lead", t.what));
+      var pts = points(t);
+      if (pts && !t.important) {
+        var more = el("details", "more");
+        more.appendChild(el("summary", null, "要点を見る（" + t.summary.length + "）"));
+        more.appendChild(pts); li.appendChild(more);
+      }
+      ul.appendChild(li);
+    });
+    d.appendChild(ul); gw.appendChild(d);
+  });
+
+  // diffs
+  var dw = document.getElementById("diffs");
+  var diffs = D.diffs || [];
+  if (!diffs.length) dw.appendChild(el("p", "card empty", D.baseline ? "初回ベースラインのため差分はありません。次回から表示されます。" : "監視ページに変更はありませんでした。"));
+  diffs.forEach(function (d) {
+    var c = el("div", "card diff"), h = el("h3");
+    var a = el("a", null, d.page); if (d.url) { a.href = d.url; a.target = "_blank"; a.rel = "noopener"; }
+    h.appendChild(a); c.appendChild(h);
+    var ul = el("ul");
+    (d.added || []).forEach(function (x) { ul.appendChild(el("li", "add", x)); });
+    (d.removed || []).forEach(function (x) { ul.appendChild(el("li", "del", x)); });
+    c.appendChild(ul); dw.appendChild(c);
+  });
+
+  // fetch status
+  var fw = document.getElementById("fetch");
+  (D.fetch || []).forEach(function (f) {
+    var li = el("li");
+    li.appendChild(el("span", f.ok ? "ok" : "ng", f.ok ? "✓" : "✕"));
+    var s = el("span", "site", f.site); if (f.note) s.appendChild(el("span", "note", f.note));
+    li.appendChild(s); fw.appendChild(li);
+  });
+
+  document.getElementById("foot").textContent = "生成: " + (D.generatedAt || D.date || "") + " · 出典は各リンク先（Microsoft公式）";
+})();
+</script>

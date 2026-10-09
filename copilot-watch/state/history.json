@@ -34,5 +34,14 @@
  {
   "date": "2026-10-09",
   "counts": {}
+ },
+ {
+  "date": "2026-10-10",
+  "counts": {
+   "M365 Copilot": 7,
+   "Copilot Studio": 1,
+   "管理・ライセンス": 1,
+   "GitHub Copilot": 1
+  }
  }
 ]
