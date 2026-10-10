@@ -1,0 +1,199 @@
+{
+ "date": "2026-10-11",
+ "generatedAt": "2026-10-11 07:58 JST",
+ "baseline": false,
+ "notice": "新着は GitHub Copilot（参考枠）のみ。Microsoft 側は新規なし",
+ "counts": {
+  "GitHub Copilot": 2
+ },
+ "history": [
+  {
+   "date": "2026-10-05",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 5,
+    "Power Automate・AI Builder": 1,
+    "管理・ライセンス": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "counts": {
+    "M365 Copilot": 1,
+    "Copilot Studio": 1,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "counts": {
+    "Copilot Studio": 12,
+    "M365 Copilot": 5,
+    "管理・ライセンス": 3
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "counts": {
+    "Power Automate・AI Builder": 2,
+    "GitHub Copilot": 5
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "counts": {}
+  },
+  {
+   "date": "2026-10-10",
+   "counts": {
+    "M365 Copilot": 7,
+    "Copilot Studio": 1,
+    "管理・ライセンス": 1,
+    "GitHub Copilot": 1
+   }
+  },
+  {
+   "date": "2026-10-11",
+   "counts": {
+    "GitHub Copilot": 2
+   }
+  }
+ ],
+ "topics": [
+  {
+   "product": "GitHub Copilot",
+   "important": false,
+   "status": "発表",
+   "title": "Copilot for JetBrains：企業管理の既定モデル指定、診断の Fix、MCP 自動起動の無効化設定",
+   "what": "JetBrains 版 GitHub Copilot で、管理者が新規会話の既定モデルを指定でき、診断エラーからワンクリックで Copilot に修正を依頼できるようになります。",
+   "summary": [
+    "Enterprise-managed default models：企業管理者が managed settings で、利用可能な Copilot エージェントモデルから新規会話の既定モデルを選べる。モデルピッカーでの明示選択は引き続き可能",
+    "Diagnostics の意図アクションに Fix を追加。インラインチャットが開き、エージェントモード（使えない場合は ask モード）で修復を依頼する",
+    "MCP の新設定で、Copilot と Claude 向けのサーバー自動起動を無効化できる",
+    "アカウント表示の改善と Switch Account、チャットのターン単位グルーピング、ユーザーメッセージのコピー／編集アクションなどの UX 改善",
+    "廃止：JetBrains IDE 2025.1 のサポート終了。プラグイン利用には 2025.2 以降が必要"
+   ],
+   "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+   "source": "GitHub changelog",
+   "updated": "10/10"
+  },
+  {
+   "product": "GitHub Copilot",
+   "important": false,
+   "status": "発表",
+   "title": "GitHub Copilot 週次リリース（10/5）：Claude Haiku 5.5 提供、ローカルサンドボックスが GA",
+   "what": "Copilot の新モデル Claude Haiku 5.5 が利用可能になり、エージェントのファイル・ネットワーク・資格情報へのアクセスを制限する「ローカルサンドボックス」が一般提供になりました。",
+   "summary": [
+    "Claude Haiku 5.5 が Copilot Pro / Pro+ / Max / Business / Enterprise で利用可能",
+    "ローカルサンドボックスが GA：Copilot CLI、Copilot アプリ、Agent Host を使う VS Code セッションで、エージェントのファイル・ネットワーク・資格情報へのアクセスを制限できる。Copilot に追加費用なしで含まれる",
+    "Copilot アプリ：Copilot ライセンス用とリポジトリ用で別々の GitHub アカウントを使える（例：企業提供ライセンス＋別アカウントのリポジトリ）",
+    "Copilot CLI：/model で、起動中のローカル Ollama のモデルを既存設定・クラウドモデルと並べて選べる",
+    "VS Code 1.141：Agents ウィンドウでセッションを並べて比較、チャットの「Open worktree cleanup」で非アクティブなワークツリーの容量確認・削除"
+   ],
+   "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+   "source": "GitHub changelog",
+   "updated": "10/09"
+  }
+ ],
+ "diffs": [
+  {
+   "page": "Copilot Studio: prompt-model-availability",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-availability",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: prompt-model-settings",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompt-model-settings",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: authoring-select-agent-model",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Copilot Studio: whats-new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "M365 Copilot: release-notes",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "M365 Copilot: extensibility whats-new",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/whats-new",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Power Platform: released-versions/copilotstudio",
+   "url": "https://learn.microsoft.com/en-us/power-platform/released-versions/copilotstudio",
+   "added": [],
+   "removed": []
+  },
+  {
+   "page": "Power Platform: release-plan",
+   "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/",
+   "added": [],
+   "removed": []
+  }
+ ],
+ "fetch": [
+  {
+   "site": "Learn 監視8ページ（200）",
+   "ok": true,
+   "note": "意味のある差分なし。release-plan は 2025wave2 のまま"
+  },
+  {
+   "site": "M365ロードマップ JSON（200）",
+   "ok": true,
+   "note": "1911件。対象13件はすべて既報"
+  },
+  {
+   "site": "M365ロードマップ RSS（200）",
+   "ok": true
+  },
+  {
+   "site": "Copilot Studio Blog RSS（200）",
+   "ok": true,
+   "note": "最新 9/25。48時間以内なし"
+  },
+  {
+   "site": "Microsoft Copilot Blog RSS（200）",
+   "ok": true,
+   "note": "最新 9/25。48時間以内なし"
+  },
+  {
+   "site": "Power Platform Blog RSS（200）",
+   "ok": true,
+   "note": "最新 10/1。48時間以内なし"
+  },
+  {
+   "site": "Tech Community Microsoft Copilot Blog（200）",
+   "ok": true,
+   "note": "10/9 の2記事は既報"
+  },
+  {
+   "site": "GitHub Copilot changelog RSS（200）",
+   "ok": true,
+   "note": "新着2件"
+  },
+  {
+   "site": "github.com m365copilot-docs atom（403）",
+   "ok": false,
+   "note": "ネットワーク未許可"
+  },
+  {
+   "site": "WebSearch（英語・日本語）",
+   "ok": true,
+   "note": "新規の一次情報なし（GPT 6.1 Sol 等は報告済み）"
+  }
+ ]
+}

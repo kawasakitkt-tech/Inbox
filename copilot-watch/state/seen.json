@@ -769,7 +769,9 @@
   "https://www.microsoft.com/microsoft-365/roadmap?id=570966",
   "https://www.microsoft.com/microsoft-365/roadmap?id=557170",
   "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
-  "https://www.microsoft.com/microsoft-365/roadmap?id=573704"
+  "https://www.microsoft.com/microsoft-365/roadmap?id=573704",
+  "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+  "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
  ],
  "ids": [
   "573280",
@@ -2320,7 +2322,9 @@
   "Viva Insights の Agent 365 ダッシュボードがサードパーティ製プラットフォームのエージェントも集計",
   "Copilot Notebooks の音声概要：トピック別エピソード、Critique/Debate 形式、秘密度ラベル対応",
   "Teams 会議の recap で、録画・文字起こし・AI要約・ノートを削除できるボタンを追加",
-  "Copilot code review：組織への課金方式と、レビュー依頼者の制御を追加"
+  "Copilot code review：組織への課金方式と、レビュー依頼者の制御を追加",
+  "Copilot for JetBrains：企業管理の既定モデル指定、診断の Fix、MCP 自動起動の無効化設定",
+  "GitHub Copilot 週次リリース（10/5）：Claude Haiku 5.5 提供、ローカルサンドボックスが GA"
  ],
  "note": "2026-10-05 初回ベースライン: M365ロードマップRSSのCopilot/Agent関連全件を既報化 / 2026-10-06: 差分ページはPage snapshotをテキスト形式で再生成(体裁変更のみ)"
 }
